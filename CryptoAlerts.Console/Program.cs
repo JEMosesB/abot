@@ -22,6 +22,8 @@ namespace CryptoAlerts.ConsoleApp
 
             cryptoAlerter.StartMonitoringExchange(new Binance());
             cryptoAlerter.StartMonitoringExchange(new Bitfinex());
+            cryptoAlerter.StartMonitoringExchange(new Poloniex());
+            cryptoAlerter.StartMonitoringExchange(new Cryptopia());
 
             Console.ReadLine();
         }
@@ -67,12 +69,12 @@ namespace CryptoAlerts.ConsoleApp
             if (crawledPage.WebException != null || crawledPage.HttpWebResponse.StatusCode != HttpStatusCode.OK)
             {
                 Console.WriteLine(
-                    $"[{DateTime.Now.ToString("HH:mm:ss")}] Crawl of page failed {crawledPage.Uri.AbsoluteUri}");
+                    $"[{DateTime.Now.ToString("HH:mm:ss")}] Crawling {exchange.Name} page has failed {crawledPage.Uri.AbsoluteUri}");
                 return;
             }
 
             Console.WriteLine(
-                $"[{DateTime.Now.ToString("HH:mm:ss")}] Crawl of page succeeded {crawledPage.Uri.AbsoluteUri}");
+                $"[{DateTime.Now.ToString("HH:mm:ss")}] Crawling {exchange.Name} page has succeeded {crawledPage.Uri.AbsoluteUri}");
 
             CQ dom = crawledPage.Content.Text; //raw html
 
@@ -88,7 +90,7 @@ namespace CryptoAlerts.ConsoleApp
         private static void SendSms(IExchange exchange, string newNewsValue)
         {
             var smsMessage =
-                $"[{DateTime.Now.ToString("HH:mm:ss")}] {exchange.Name} has a new listing!\nNew announcement: [{newNewsValue}]\nHere is the link if you want to check it out: {exchange.Url}";
+                $"[{DateTime.Now.ToString("HH:mm:ss")}] {exchange.Name} has a new announcement!\n[{newNewsValue}]\nHere is the link if you want to check it out: {exchange.Url}";
 
             MessageResource.Create(
                 to: new PhoneNumber("+447831917259"),

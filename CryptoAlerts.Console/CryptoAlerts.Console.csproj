@@ -88,6 +88,8 @@
     <Compile Include="Exchanges\Binance.cs" />
     <Compile Include="Exchanges\Bitfinex.cs" />
     <Compile Include="Exchanges\IExchange.cs" />
+    <Compile Include="Exchanges\Poloniex.cs" />
+    <Compile Include="Exchanges\Cryptopia.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
