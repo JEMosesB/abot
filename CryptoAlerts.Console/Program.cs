@@ -13,13 +13,16 @@ namespace CryptoAlerts.ConsoleApp
             var cryptoAlerter = new CryptoAlerter();
 
             // ------------- Exchanges ------------
-            cryptoAlerter.StartMonitoringExchange(new Binance());
-            cryptoAlerter.StartMonitoringExchange(new Bitfinex());
-            cryptoAlerter.StartMonitoringExchange(new Poloniex());
-            cryptoAlerter.StartMonitoringExchange(new Cryptopia());
+            cryptoAlerter.StartMonitoring(new Binance());
+            cryptoAlerter.StartMonitoring(new Bitfinex());
+            cryptoAlerter.StartMonitoring(new Poloniex());
+            cryptoAlerter.StartMonitoring(new Cryptopia());
+            cryptoAlerter.StartMonitoring(new Gate());
 
             // ------------- Authorities ------------
-            cryptoAlerter.StartMonitoringExchange(new JohnMcAfee());
+            cryptoAlerter.StartMonitoring(new JohnMcAfee());        
+            cryptoAlerter.StartMonitoring(new EtherDelta());
+            // cryptoAlerter.StartMonitoring(new InItForTheMoney());
 
             Console.ReadLine();
         }

@@ -85,11 +85,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Influencers\Authorities\InItForTheMoney.cs" />
     <Compile Include="Influencers\Authorities\JohnMcAfee.cs" />
     <Compile Include="CryptoAlerter.cs" />
     <Compile Include="Influencers\BaseInfluencer.cs" />
     <Compile Include="Influencers\Exchanges\Binance.cs" />
     <Compile Include="Influencers\Exchanges\Bitfinex.cs" />
+    <Compile Include="Influencers\Exchanges\EtherDelta.cs" />
+    <Compile Include="Influencers\Exchanges\Gate.io.cs" />
     <Compile Include="Influencers\IInfluencer.cs" />
     <Compile Include="Influencers\Exchanges\Poloniex.cs" />
     <Compile Include="Influencers\Exchanges\Cryptopia.cs" />
