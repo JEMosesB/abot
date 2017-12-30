@@ -85,20 +85,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exchanges\Binance.cs" />
-    <Compile Include="Exchanges\Bitfinex.cs" />
-    <Compile Include="Exchanges\IExchange.cs" />
-    <Compile Include="Exchanges\Poloniex.cs" />
-    <Compile Include="Exchanges\Cryptopia.cs" />
+    <Compile Include="Influencers\Authorities\JohnMcAfee.cs" />
+    <Compile Include="CryptoAlerter.cs" />
+    <Compile Include="Influencers\BaseInfluencer.cs" />
+    <Compile Include="Influencers\Exchanges\Binance.cs" />
+    <Compile Include="Influencers\Exchanges\Bitfinex.cs" />
+    <Compile Include="Influencers\IInfluencer.cs" />
+    <Compile Include="Influencers\Exchanges\Poloniex.cs" />
+    <Compile Include="Influencers\Exchanges\Cryptopia.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmsSender.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_Readme\Elmah.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Abot\Abot.csproj">
@@ -106,5 +108,6 @@
       <Name>Abot</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
