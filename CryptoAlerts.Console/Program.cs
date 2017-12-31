@@ -19,10 +19,11 @@ namespace CryptoAlerts.ConsoleApp
             cryptoAlerter.StartMonitoring(new Poloniex());
             cryptoAlerter.StartMonitoring(new Cryptopia());
             cryptoAlerter.StartMonitoring(new Gate());
+            cryptoAlerter.StartMonitoring(new EtherDelta());
+            cryptoAlerter.StartMonitoring(new Tidex());
 
             // ------------- Authorities ------------
             cryptoAlerter.StartMonitoring(new JohnMcAfee());
-            cryptoAlerter.StartMonitoring(new EtherDelta());
             cryptoAlerter.StartMonitoring(new InItForTheMoney());
 
             Console.ReadLine();

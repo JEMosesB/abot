@@ -95,6 +95,7 @@
     <Compile Include="Influencers\Exchanges\Bitfinex.cs" />
     <Compile Include="Influencers\Exchanges\EtherDelta.cs" />
     <Compile Include="Influencers\Exchanges\Gate.io.cs" />
+    <Compile Include="Influencers\Exchanges\Tidex.cs" />
     <Compile Include="Influencers\IInfluencer.cs" />
     <Compile Include="Influencers\Exchanges\Poloniex.cs" />
     <Compile Include="Influencers\Exchanges\Cryptopia.cs" />
