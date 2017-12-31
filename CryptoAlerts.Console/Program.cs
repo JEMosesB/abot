@@ -1,4 +1,5 @@
 ﻿using System;
+using CryptoAlerts.ConsoleApp.Core;
 using CryptoAlerts.ConsoleApp.Influencers.Authorities;
 using CryptoAlerts.ConsoleApp.Influencers.Exchanges;
 
@@ -12,7 +13,7 @@ namespace CryptoAlerts.ConsoleApp
 
             var cryptoAlerter = new CryptoAlerter();
 
-            // ------------- Exchanges ------------
+            //-------------Exchanges------------
             cryptoAlerter.StartMonitoring(new Binance());
             cryptoAlerter.StartMonitoring(new Bitfinex());
             cryptoAlerter.StartMonitoring(new Poloniex());
@@ -20,9 +21,9 @@ namespace CryptoAlerts.ConsoleApp
             cryptoAlerter.StartMonitoring(new Gate());
 
             // ------------- Authorities ------------
-            cryptoAlerter.StartMonitoring(new JohnMcAfee());        
+            cryptoAlerter.StartMonitoring(new JohnMcAfee());
             cryptoAlerter.StartMonitoring(new EtherDelta());
-            // cryptoAlerter.StartMonitoring(new InItForTheMoney());
+            cryptoAlerter.StartMonitoring(new InItForTheMoney());
 
             Console.ReadLine();
         }

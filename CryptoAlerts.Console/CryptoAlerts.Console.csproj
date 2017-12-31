@@ -85,9 +85,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\CrawlChecker.cs" />
     <Compile Include="Influencers\Authorities\InItForTheMoney.cs" />
     <Compile Include="Influencers\Authorities\JohnMcAfee.cs" />
-    <Compile Include="CryptoAlerter.cs" />
+    <Compile Include="Core\CryptoAlerter.cs" />
+    <Compile Include="Core\YoutubeChecker.cs" />
     <Compile Include="Influencers\BaseInfluencer.cs" />
     <Compile Include="Influencers\Exchanges\Binance.cs" />
     <Compile Include="Influencers\Exchanges\Bitfinex.cs" />
@@ -99,7 +101,7 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SmsSender.cs" />
+    <Compile Include="Core\SmsSender.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,9 +1,8 @@
 ﻿using System;
-using CryptoAlerts.ConsoleApp.Influencers;
 using Twilio.Rest.Api.V2010.Account;
 using Twilio.Types;
 
-namespace CryptoAlerts.ConsoleApp
+namespace CryptoAlerts.ConsoleApp.Core
 {
     public static class SmsSender
     {
@@ -11,7 +10,7 @@ namespace CryptoAlerts.ConsoleApp
         {
             MessageResource.Create(
                 to: new PhoneNumber("+447831917259"),
-                from: new PhoneNumber("+441618507067"),
+                @from: new PhoneNumber("+441618507067"),
                 body: smsMessage);
 
             Console.WriteLine($"Following SMS has just been sent:\n{smsMessage}"); 

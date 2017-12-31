@@ -1,4 +1,5 @@
 ﻿using System;
+using CryptoAlerts.ConsoleApp.Core;
 using CryptoAlerts.ConsoleApp.Extensions;
 using CsQuery;
 

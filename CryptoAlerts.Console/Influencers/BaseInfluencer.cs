@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Net;
+using Abot.Crawler;
+using Abot.Poco;
+using CryptoAlerts.ConsoleApp.Core;
 using CsQuery;
 
 namespace CryptoAlerts.ConsoleApp.Influencers
@@ -16,13 +20,14 @@ namespace CryptoAlerts.ConsoleApp.Influencers
             return $"[{DateTime.Now.ToString("HH:mm:ss")}] \"{Name}\" has a new announcement!\n[{newAnnouncement}]\nHere is the link if you want to check it out: {Url}";
         }
 
+        public virtual void CheckWebsite()
+        {
+            CrawlChecker.CheckWebsite(this);
+        }
+
         public virtual void ProcessHtml(string htmlContent)
         {
             CQ dom = htmlContent;
-
-            
-            //var a = dom["div#content ytd-browse[page-subtype='channels'] div#contents div#items div#dismissable div#details div#meta h3"];
-            //var newAnnouncement = a.Text().Trim();
 
             var newAnnouncement = dom[CssString].Text().Trim();
 

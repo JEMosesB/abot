@@ -10,5 +10,6 @@
 
         void ProcessHtml(string htmlContent);
         string GetSmsMessage(string newAnnouncement);
+        void CheckWebsite();
     }
 }
