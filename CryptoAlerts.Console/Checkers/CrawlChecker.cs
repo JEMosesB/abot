@@ -4,10 +4,11 @@ using Abot.Crawler;
 using Abot.Poco;
 using CryptoAlerts.ConsoleApp.Influencers;
 
-namespace CryptoAlerts.ConsoleApp.Core
+namespace CryptoAlerts.ConsoleApp.Checkers
 {
     public static class CrawlChecker
     {
+
         public static void CheckWebsite(IInfluencer exchange)
         {
             var uriToCrawl = new Uri(exchange.Url);
@@ -25,13 +26,13 @@ namespace CryptoAlerts.ConsoleApp.Core
 
             if (crawledPage.WebException != null || crawledPage.HttpWebResponse.StatusCode != HttpStatusCode.OK)
             {
-                Console.WriteLine($"[{DateTime.Now.ToString("HH:mm:ss")}] Crawling [{exchange.Name}] page has failed. {crawledPage.Uri.AbsoluteUri}");
+                Console.WriteLine($"[{DateTime.Now.ToString("HH:mm:ss")}] Failed. Crawling [{exchange.Name}] page has failed. {crawledPage.Uri.AbsoluteUri}");
                 return;
             }
 
-            Console.WriteLine($"[{DateTime.Now.ToString("HH:mm:ss")}] Crawling [{exchange.Name}] page has succeeded. {crawledPage.Uri.AbsoluteUri}");
+            Console.WriteLine($"[{DateTime.Now.ToString("HH:mm:ss")}] Succeeded. Crawling [{exchange.Name}] page has succeeded. {crawledPage.Uri.AbsoluteUri}");
 
-            exchange.ProcessHtml(crawledPage.Content.Text);
+            // exchange.ProcessHtml(crawledPage.Content.Text);
         }
     }
 }

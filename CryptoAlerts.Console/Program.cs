@@ -1,7 +1,12 @@
 ﻿using System;
+using HtmlAgilityPack;
+using Fizzler.Systems.HtmlAgilityPack;
+
 using CryptoAlerts.ConsoleApp.Core;
 using CryptoAlerts.ConsoleApp.Influencers.Authorities;
 using CryptoAlerts.ConsoleApp.Influencers.Exchanges;
+using System.Net;
+using CsQuery;
 
 namespace CryptoAlerts.ConsoleApp
 {
@@ -13,7 +18,7 @@ namespace CryptoAlerts.ConsoleApp
 
             var cryptoAlerter = new CryptoAlerter();
 
-            //-------------Exchanges------------
+            // -------------Exchanges------------
             cryptoAlerter.StartMonitoring(new Binance());
             cryptoAlerter.StartMonitoring(new Bitfinex());
             cryptoAlerter.StartMonitoring(new Poloniex());
@@ -22,7 +27,7 @@ namespace CryptoAlerts.ConsoleApp
             cryptoAlerter.StartMonitoring(new EtherDelta());
             cryptoAlerter.StartMonitoring(new Tidex());
 
-            // ------------- Authorities ------------
+            // -------------Authorities------------
             cryptoAlerter.StartMonitoring(new JohnMcAfee());
             cryptoAlerter.StartMonitoring(new InItForTheMoney());
 

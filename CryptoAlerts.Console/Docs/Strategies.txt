@@ -1,0 +1,4 @@
+Play on the difference of curency values on different exchanges at the same time. For example if XVG on Bitfinex rose sharply, XVG on Binance might still take a while to rise, so it might be worth it to buy coin on Binance, as it should reach the Bitfinex's price in a short while.
+
+Play on the differences of currency values within the same exchange. For example after sharp increase in price of BTC/OMG, ETH/OMG might still be catching up, so buying OMG for ETH and selling for BTC might be profitable.
+

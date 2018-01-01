@@ -2,6 +2,8 @@
 using CryptoAlerts.ConsoleApp.Core;
 using CryptoAlerts.ConsoleApp.Extensions;
 using CsQuery;
+using System.Collections.Generic;
+using CryptoAlerts.ConsoleApp.Checkers;
 
 namespace CryptoAlerts.ConsoleApp.Influencers.Authorities
 {
@@ -10,9 +12,15 @@ namespace CryptoAlerts.ConsoleApp.Influencers.Authorities
         public override string Name { get; set; } = "In it for the Money";
         public string PublicUrl { get; set; } = "https://www.youtube.com/channel/UCrn0rKrnYAme8fPa1HBWwbQ/videos";
         public override string Url { get; set; } = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCrn0rKrnYAme8fPa1HBWwbQ&order=date&type=video&videoSyndicated=true&key=AIzaSyDTZk1ee5OQifm_zx9P7en9H2kwIuuYRaY";
-        public override string LastAnnouncement { get; set; } = "RISE (RISE) | On the Rise?";
-        public override string CssString { get; set; } = "div#content ytd-browse[page-subtype='channels'] div#contents div#items div#dismissable div#details div#meta h3 a#video-title";
-        public override int IntervalInSeconds { get; set; } = 60;
+
+        public override Dictionary<string, string> Content { get; set; } =
+            new Dictionary<string, string> { {
+                "div#content ytd-browse[page-subtype='channels'] div#contents div#items div#dismissable div#details div#meta h3 a#video-title",
+                "RISE (RISE) | On the Rise?"
+            }
+        };
+
+        public override int IntervalInSeconds { get; set; } = 20;
 
         public override string GetSmsMessage(string newAnnouncement)
         {
@@ -21,7 +29,7 @@ namespace CryptoAlerts.ConsoleApp.Influencers.Authorities
 
         public override void CheckWebsite()
         {
-            YoutubeChecker.CheckWebsite(this);
+            CheckWebsiteWithChecker(new YoutubeChecker());
         }
     }
 }

@@ -14,19 +14,15 @@ namespace CryptoAlerts.ConsoleApp.Core
             TwilioClient.Init("AC7b07eea0532bc8889257e22df4185fcd", "8eaf16a3cf44a49976e07ad1b78321f7");
         }
 
-        public async Task StartMonitoring(IInfluencer exchange, CancellationToken token = default(CancellationToken))
+        public async Task StartMonitoring(IInfluencer influencer, CancellationToken token = default(CancellationToken))
         {
-            // Uri uriToCrawl = new Uri(exchange.Url);
-
-            // IWebCrawler crawler;
-
             while (!token.IsCancellationRequested)
             {
-                exchange.CheckWebsite();
+                influencer.CheckWebsite();
 
                 try
                 {
-                    await Task.Delay(TimeSpan.FromSeconds(exchange.IntervalInSeconds), token);
+                    await Task.Delay(TimeSpan.FromSeconds(influencer.IntervalInSeconds), token);
                 }
                 catch (TaskCanceledException)
                 {
