@@ -51,12 +51,15 @@ namespace CryptoAlerts.ConsoleApp.Influencers
 
         public virtual void ProcessNewContent(Dictionary<string, string> newContent)
         {
-            foreach (var newItem in newContent)
+            if (newContent != null)
             {
-                if (newItem.Value != "" && Content[newItem.Key] != newItem.Value && ExtraConditions(newItem.Value))
-                { 
-                    SmsSender.Send(GetSmsMessage(newItem.Value));
-                    Content[newItem.Key] = newItem.Value;
+                foreach (var newItem in newContent)
+                {
+                    if (newItem.Value != "" && Content[newItem.Key] != newItem.Value && ExtraConditions(newItem.Value))
+                    {
+                        SmsSender.Send(GetSmsMessage(newItem.Value));
+                        Content[newItem.Key] = newItem.Value;
+                    }
                 }
             }
         }
