@@ -20,7 +20,7 @@ namespace CryptoAlerts.ConsoleApp.Influencers.Exchanges
 
         public override int IntervalInSeconds { get; set; } = 20;
 
-        public override bool ExtraConditions(string newContent)
+        protected override bool ExtraConditions(string newContent)
         {
             return newContent.Contains("New listing", StringComparison.InvariantCultureIgnoreCase);
         }

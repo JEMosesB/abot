@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
+using System.Threading.Tasks;
 using CryptoAlerts.ConsoleApp.Core;
 using CryptoAlerts.ConsoleApp.Influencers;
 using Newtonsoft.Json.Linq;
@@ -12,14 +13,14 @@ namespace CryptoAlerts.ConsoleApp.Checkers
 {
     public class YoutubeChecker : IChecker
     {
-        public Dictionary<string, string> GetContent(IInfluencer influencer)
+        public async Task<Dictionary<string, string>> GetContent(IInfluencer influencer)
         {
             try
             {
                 Stopwatch timer = Stopwatch.StartNew();
-                dynamic responseJson = GetJson(influencer);
+                dynamic responseJson = await GetJson(influencer);
                 timer.Stop();
-                Console.WriteLine($"[{DateTime.Now.ToString("HH:mm:ss")}] Success. Crawling Youtube page of [{influencer.Name}] has succeeded");
+                Console.WriteLine($"[{DateTime.Now.ToString("HH:mm:ss")}] Success. Crawling Youtube page of [{influencer.Name}] has taken [{timer.Elapsed}] seconds");
 
                 var titles = ((IEnumerable)responseJson.items).Cast<dynamic>()
                                 .Select(x => new
@@ -43,13 +44,13 @@ namespace CryptoAlerts.ConsoleApp.Checkers
             return null;
         }
 
-        private dynamic GetJson(IInfluencer influencer)
+        private async Task<dynamic> GetJson(IInfluencer influencer)
         {
             dynamic responseJson;
             using (var httpClient = new HttpClient())
             {
                 var uriToCheck = new Uri(influencer.Url);
-                responseJson = JObject.Parse(httpClient.GetStringAsync(uriToCheck).Result);
+                responseJson = JObject.Parse(await httpClient.GetStringAsync(uriToCheck));
             }
 
             return responseJson;

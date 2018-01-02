@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net;
+using System.Threading.Tasks;
 using CryptoAlerts.ConsoleApp.Core;
 using CryptoAlerts.ConsoleApp.Influencers;
 using CsQuery;
@@ -10,12 +11,12 @@ namespace CryptoAlerts.ConsoleApp.Checkers
 {
     public class GenericChecker : IChecker
     {
-        public Dictionary<string, string> GetContent(IInfluencer influencer)
+        public async Task<Dictionary<string, string>> GetContent(IInfluencer influencer)
         {
             try
             {
                 Stopwatch timer = Stopwatch.StartNew();
-                CQ html = GetHtml(influencer);
+                CQ html = await GetHtml(influencer);
                 timer.Stop();
                 Console.WriteLine($"[{DateTime.Now.ToString("HH:mm:ss")}] Success. Crawling [{influencer.Name}] page has taken [{timer.Elapsed}] seconds");
 
@@ -35,16 +36,26 @@ namespace CryptoAlerts.ConsoleApp.Checkers
             return null;
         }
 
-        private string GetHtml(IInfluencer influencer)
+        private async Task<string> GetHtml(IInfluencer influencer)
         {
             string htmlContent;
-            using (WebClient client = new WebClient())
+            using (MyWebClient client = new MyWebClient())
             {
                 client.Encoding = System.Text.Encoding.UTF8;
-                htmlContent = client.DownloadString(influencer.Url);
+                htmlContent = await client.DownloadStringTaskAsync(new Uri(influencer.Url));
             }
 
             return htmlContent;
+        }
+
+        private class MyWebClient : WebClient
+        {
+            protected override WebRequest GetWebRequest(Uri uri)
+            {
+                WebRequest w = base.GetWebRequest(uri);
+                w.Timeout = 15 * 1000;
+                return w;
+            }
         }
     }
 }

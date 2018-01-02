@@ -16,10 +16,9 @@ namespace CryptoAlerts.ConsoleApp.Core
 
         public async Task StartMonitoring(IInfluencer influencer, CancellationToken token = default(CancellationToken))
         {
+            await influencer.Init();
             while (!token.IsCancellationRequested)
             {
-                influencer.CheckWebsite();
-
                 try
                 {
                     await Task.Delay(TimeSpan.FromSeconds(influencer.IntervalInSeconds), token);
@@ -28,6 +27,8 @@ namespace CryptoAlerts.ConsoleApp.Core
                 {
                     break;
                 }
+
+                await influencer.CheckWebsite();
             }
         }
     }

@@ -23,7 +23,7 @@ namespace CryptoAlerts.ConsoleApp.Influencers.Authorities
 
         public override int IntervalInSeconds { get; set; } = 20;
 
-        public override bool ExtraConditions(string newContent)
+        protected override bool ExtraConditions(string newContent)
         {
             return newContent.Contains("Coin of the", StringComparison.InvariantCultureIgnoreCase);
         }
