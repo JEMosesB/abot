@@ -25,6 +25,7 @@ namespace CryptoAlerts.ConsoleApp
             // -------------Authorities------------
             cryptoAlerter.StartMonitoring(new JohnMcAfee());
             cryptoAlerter.StartMonitoring(new InItForTheMoney());
+            cryptoAlerter.StartMonitoring(new TwitterTest());
 
             Console.ReadLine();
         }

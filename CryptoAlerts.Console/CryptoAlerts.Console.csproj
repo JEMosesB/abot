@@ -117,6 +117,7 @@
     <Compile Include="Influencers\Authorities\JohnMcAfee.cs" />
     <Compile Include="Core\CryptoAlerter.cs" />
     <Compile Include="Checkers\YoutubeChecker.cs" />
+    <Compile Include="Influencers\Authorities\TwitterTest.cs" />
     <Compile Include="Influencers\BaseInfluencer.cs" />
     <Compile Include="Influencers\Exchanges\Binance.cs" />
     <Compile Include="Influencers\Exchanges\Bitfinex.cs" />

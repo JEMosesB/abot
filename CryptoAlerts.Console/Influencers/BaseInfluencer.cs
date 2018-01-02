@@ -28,6 +28,7 @@ namespace CryptoAlerts.ConsoleApp.Influencers
             foreach (var key in newContent.Keys.ToList())
             {
                 Content[key] = newContent[key];
+                Console.WriteLine($"  Initial value for [{Name}] alert is: [{Content[key]}]");
             }
         }
 
