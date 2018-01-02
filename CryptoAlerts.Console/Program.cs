@@ -1,13 +1,7 @@
 ﻿using System;
-using HtmlAgilityPack;
-using Fizzler.Systems.HtmlAgilityPack;
-
 using CryptoAlerts.ConsoleApp.Core;
 using CryptoAlerts.ConsoleApp.Influencers.Authorities;
 using CryptoAlerts.ConsoleApp.Influencers.Exchanges;
-using System.Net;
-using System.Threading.Tasks;
-using CsQuery;
 
 namespace CryptoAlerts.ConsoleApp
 {

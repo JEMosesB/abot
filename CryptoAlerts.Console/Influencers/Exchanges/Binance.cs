@@ -11,6 +11,9 @@ namespace CryptoAlerts.ConsoleApp.Influencers.Exchanges
             new Dictionary<string, string> { {
                 "li.article-list-item:first",
                 "Binance Lists Triggers (TRIG)"
+            }, {
+                "section.section:nth-child(2) li.article-list-item:first",
+                "The Fifth Session of “Community Coin per Month"
             }
         };
 
