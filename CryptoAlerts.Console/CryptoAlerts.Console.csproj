@@ -121,6 +121,7 @@
     <Compile Include="Influencers\BaseInfluencer.cs" />
     <Compile Include="Influencers\Exchanges\Binance.cs" />
     <Compile Include="Influencers\Exchanges\Bitfinex.cs" />
+    <Compile Include="Influencers\Exchanges\CoinExchange.cs" />
     <Compile Include="Influencers\Exchanges\EtherDelta.cs" />
     <Compile Include="Influencers\Exchanges\Gate.io.cs" />
     <Compile Include="Influencers\Exchanges\Tidex.cs" />

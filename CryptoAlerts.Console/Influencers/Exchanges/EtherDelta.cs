@@ -26,3 +26,14 @@ namespace CryptoAlerts.ConsoleApp.Influencers.Exchanges
         }
     }
 }
+
+/*
+Analysis:
+EtherDelta: 
+(Descr: A very random market with almost everything trash, but possibly worth investing if there is listing somewhere else)
+
+Reaction Time: a few minutes
+Updates: Rarely, just a couple times a month, but in big spurts, 10ns of currencies at a time.
+
+Once a week at most, but updates many coins at a time.
+*/

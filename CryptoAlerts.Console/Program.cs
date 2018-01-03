@@ -21,6 +21,7 @@ namespace CryptoAlerts.ConsoleApp
             cryptoAlerter.StartMonitoring(new Gate());
             cryptoAlerter.StartMonitoring(new EtherDelta());
             cryptoAlerter.StartMonitoring(new Tidex());
+            // cryptoAlerter.StartMonitoring(new CoinExchange()); - Unreliable alert
 
             // -------------Authorities------------
             cryptoAlerter.StartMonitoring(new JohnMcAfee());

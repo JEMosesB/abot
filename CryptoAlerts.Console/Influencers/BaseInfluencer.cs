@@ -16,6 +16,7 @@ namespace CryptoAlerts.ConsoleApp.Influencers
     {
         protected virtual IChecker Checker { get; set; } = new GenericChecker();
         public virtual string Name { get; set; }
+        public virtual string Description { get; set; }
         public virtual string Url { get; set; }
         public virtual Dictionary<string, string> Content { get; set; }
         public virtual string CssString { get; set; }
@@ -51,15 +52,12 @@ namespace CryptoAlerts.ConsoleApp.Influencers
 
         public virtual void ProcessNewContent(Dictionary<string, string> newContent)
         {
-            if (newContent != null)
+            foreach (var newItem in newContent)
             {
-                foreach (var newItem in newContent)
+                if (newItem.Value != "" && Content[newItem.Key] != newItem.Value && ExtraConditions(newItem.Value))
                 {
-                    if (newItem.Value != "" && Content[newItem.Key] != newItem.Value && ExtraConditions(newItem.Value))
-                    {
-                        SmsSender.Send(GetSmsMessage(newItem.Value));
-                        Content[newItem.Key] = newItem.Value;
-                    }
+                    SmsSender.Send(GetSmsMessage(newItem.Value));
+                    Content[newItem.Key] = newItem.Value;
                 }
             }
         }

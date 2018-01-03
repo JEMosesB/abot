@@ -6,6 +6,7 @@ namespace CryptoAlerts.ConsoleApp.Influencers
     public interface IInfluencer
     {
         string Name { get; set; }
+        string Description { get; set; }
         string Url { get; set; }
         Dictionary<string, string> Content { get; set; }
         int IntervalInSeconds { get; set; }

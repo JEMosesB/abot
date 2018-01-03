@@ -17,3 +17,14 @@ namespace CryptoAlerts.ConsoleApp.Influencers.Exchanges
         public override int IntervalInSeconds { get; set; } = 60;
     }
 }
+
+/*
+Analysis:
+Poloniex: No idea. Very rare updates so no past history.
+
+Reaction Time: a few minutes
+Updates: Extremely rare updates.
+
+STORJ - No change.
+
+*/

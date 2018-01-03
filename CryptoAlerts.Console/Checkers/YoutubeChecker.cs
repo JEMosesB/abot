@@ -15,6 +15,8 @@ namespace CryptoAlerts.ConsoleApp.Checkers
     {
         public async Task<Dictionary<string, string>> GetContent(IInfluencer influencer)
         {
+            var result = new Dictionary<string, string>();
+
             try
             {
                 Stopwatch timer = Stopwatch.StartNew();
@@ -27,21 +29,20 @@ namespace CryptoAlerts.ConsoleApp.Checkers
                                 {
                                     PublishedAt = (DateTime)x.snippet.publishedAt,
                                     Title = (string)x.snippet.title
-                                }).ToList();
+                                }).Where(x => (DateTime.Now - x.PublishedAt).TotalHours < 5).ToList();
 
-                var result = new Dictionary<string, string>
-                { {
-                    influencer.Content.First().Key,
-                    titles.OrderByDescending(x => x.PublishedAt).First().Title
-                } };
-                return result;
+                if (titles.Count > 0)
+                {
+                    result.Add(influencer.Content.First().Key,
+                        titles.OrderByDescending(x => x.PublishedAt).First().Title);
+                }
             }
             catch (Exception e)
             {
                 Console.WriteLine($"[{DateTime.Now.ToString("HH:mm:ss")}] Failed. Crawling Youtube page of [{influencer.Name}] page has failed. Error:\n{e.Message}");
             }
 
-            return null;
+            return result;
         }
 
         private async Task<dynamic> GetJson(IInfluencer influencer)
