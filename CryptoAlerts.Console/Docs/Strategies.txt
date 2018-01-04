@@ -1,4 +1,15 @@
+Strategy No.2:
 Play on the difference of curency values on different exchanges at the same time. For example if XVG on Bitfinex rose sharply, XVG on Binance might still take a while to rise, so it might be worth it to buy coin on Binance, as it should reach the Bitfinex's price in a short while.
 
-Play on the differences of currency values within the same exchange. For example after sharp increase in price of BTC/OMG, ETH/OMG might still be catching up, so buying OMG for ETH and selling for BTC might be profitable.
+Strategy No.3:
+Play on the differences of currency values within the same exchange. For example after sharp increase in price of BTC/OMG, ETH/OMG might still be catching up, so buying OMG for ETH and selling for BTC might be profitable. - Write a bot that runs this analysis across all currencies on exchange.
 
+Strategy No.4:
+Analyse possible manipulations of markets with appropriate amounts of buy and sell spread. 
+(Like investing 0.1 bitcoin is going to raise the price by 100%. And what is the imact of that? - Try it a few times)
+
+Strategy No.5:
+Invest in very small coins, as they might grow a lot one day. Research youtube videos and influencers with followings that harp on promoting them.
+
+Strategy No.6:
+Invest in promising ICOs with the best looking websites

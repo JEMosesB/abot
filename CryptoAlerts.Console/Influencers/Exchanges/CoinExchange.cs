@@ -5,7 +5,7 @@ namespace CryptoAlerts.ConsoleApp.Influencers.Exchanges
     public class CoinExchange : BaseInfluencer
     {
         public override string Name { get; set; } = "CoinExchange";
-        public override string Url { get; set; } = "https://www.coinexchange.io/market/MOON/BTC";
+        public override string Url { get; set; } = "https://twitter.com/CoinExchangeio";
 
         public override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {

@@ -1,0 +1,29 @@
+Priority 1:
+
+Add descriptions in the SMS on average effect of the alerts (accross boards)
+Add list of things to do to Github.
+Remove Abot
+
+Priority 2:
+
+Upgrade Twillio
+Cancel Debit card
+Fill in accounting stuff
+
+Rename Influencers to Alerts
+
+Add analysis to the Message. 
+(Where else is that Coin is listed, what is the price, predicted gain, buy and sell price)
+
+Add API to post messages on Twitter. Create a special Crypto alerts twitter 
+(Crypto alerts, coin alerts, buy signals, analysis?)
+
+Add message postprocessing 
+
+Add alert for Coinfloor, Coin Base and proper one for CoinExchange
+
+
+
+
+
+0.1 BTC = 148955 DOGE
