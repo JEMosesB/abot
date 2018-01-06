@@ -120,6 +120,7 @@
     <Compile Include="Influencers\Authorities\TwitterTest.cs" />
     <Compile Include="Influencers\BaseInfluencer.cs" />
     <Compile Include="Influencers\Exchanges\Binance.cs" />
+    <Compile Include="Influencers\Exchanges\Binance_Twitter.cs" />
     <Compile Include="Influencers\Exchanges\Bitfinex.cs" />
     <Compile Include="Influencers\Exchanges\CoinExchange.cs" />
     <Compile Include="Influencers\Exchanges\EtherDelta.cs" />

@@ -15,6 +15,7 @@ namespace CryptoAlerts.ConsoleApp
 
             // -------------Exchanges------------
             cryptoAlerter.StartMonitoring(new Binance());
+            cryptoAlerter.StartMonitoring(new Binance_Twitter());
             cryptoAlerter.StartMonitoring(new Bitfinex());
             cryptoAlerter.StartMonitoring(new Poloniex());
             cryptoAlerter.StartMonitoring(new Cryptopia());
