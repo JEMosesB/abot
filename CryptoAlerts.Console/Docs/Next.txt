@@ -1,12 +1,14 @@
-Priority 1:
+Priority 0:
+Prepare for NIO launch - only left to check Cryptopia one last time, and do a daily withdrawal.
+Open limits on more exchanges - In progress need to check in a few days.
+Plan exchange movements for speed - 1st thing I need to do is gather all my money back in one place first. Hello Binance!
 
+Priority 1:
 Add descriptions in the SMS on average effect of the alerts (accross boards)
-Add list of things to do to Github.
-Remove Abot
+Remove Abot, move the project to private directory.
+Add AWS hosting.
 
 Priority 2:
-
-Upgrade Twillio
 Cancel Debit card
 Fill in accounting stuff
 
@@ -16,14 +18,6 @@ Add analysis to the Message.
 (Where else is that Coin is listed, what is the price, predicted gain, buy and sell price)
 
 Add API to post messages on Twitter. Create a special Crypto alerts twitter 
-(Crypto alerts, coin alerts, buy signals, analysis?)
+(Crypto alerts, coin alerts, buy signals, analysis?) - Maybe worth doing to manipulate the market in my favor. But this will need to be done later after I have more alerts that are worth sharing (also think which alerts to share that can help me).
 
-Add message postprocessing 
-
-Add alert for Coinfloor, Coin Base and proper one for CoinExchange
-
-
-
-
-
-0.1 BTC = 148955 DOGE
+Add alert for Coinfloor, Coin Base and proper one for CoinExchange - I need to figure out where this info comes from.
