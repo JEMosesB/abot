@@ -40,9 +40,16 @@ namespace CryptoAlerts.ConsoleApp.Influencers
 
         public virtual async Task CheckWebsite()
         {
-            var newContent = await Checker.GetContent(this);
+            try
+            {
+                var newContent = await Checker.GetContent(this);
 
-            ProcessNewContent(newContent);
+                ProcessNewContent(newContent);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"[{DateTime.Now.ToString("HH:mm:ss")}] Failed. Crawling [{Name}] page has failed. Url: {Url}\nError:\n{e.Message}");
+            }
         }
 
         protected virtual bool ExtraConditions(string newContent)

@@ -13,6 +13,8 @@ namespace CryptoAlerts.ConsoleApp.Checkers
     {
         public async Task<Dictionary<string, string>> GetContent(IInfluencer influencer)
         {
+            var results = new Dictionary<string, string>();
+
             try
             {
                 Stopwatch timer = Stopwatch.StartNew();
@@ -20,7 +22,6 @@ namespace CryptoAlerts.ConsoleApp.Checkers
                 timer.Stop();
                 Console.WriteLine($"[{DateTime.Now.ToString("HH:mm:ss")}] Success. Crawling [{influencer.Name}] page has taken [{timer.Elapsed}] seconds");
 
-                var results = new Dictionary<string, string>();
                 foreach (var check in influencer.Content)
                 {
                     results.Add(check.Key, html[check.Key].Text().Trim());
@@ -33,7 +34,7 @@ namespace CryptoAlerts.ConsoleApp.Checkers
                 Console.WriteLine($"[{DateTime.Now.ToString("HH:mm:ss")}] Failed. Crawling [{influencer.Name}] page has failed. Url: {influencer.Url}\nError:\n{e.Message}");
             }
 
-            return null;
+            return results;
         }
 
         private async Task<string> GetHtml(IInfluencer influencer)
