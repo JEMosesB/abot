@@ -123,6 +123,7 @@
     <Compile Include="Influencers\Exchanges\Binance_Twitter.cs" />
     <Compile Include="Influencers\Exchanges\Bitfinex.cs" />
     <Compile Include="Influencers\Exchanges\CoinExchange.cs" />
+    <Compile Include="Influencers\Authorities\CoinMarketCap.cs" />
     <Compile Include="Influencers\Exchanges\EtherDelta.cs" />
     <Compile Include="Influencers\Exchanges\Gate.io.cs" />
     <Compile Include="Influencers\Exchanges\Tidex.cs" />

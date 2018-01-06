@@ -28,6 +28,7 @@ namespace CryptoAlerts.ConsoleApp
             cryptoAlerter.StartMonitoring(new JohnMcAfee());
             cryptoAlerter.StartMonitoring(new InItForTheMoney());
             cryptoAlerter.StartMonitoring(new TwitterTest());
+            cryptoAlerter.StartMonitoring(new CoinMarketCap());
 
             Console.ReadLine();
         }

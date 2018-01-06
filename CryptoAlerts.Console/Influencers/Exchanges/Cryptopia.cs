@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using CryptoAlerts.ConsoleApp.Extensions;
 
 namespace CryptoAlerts.ConsoleApp.Influencers.Exchanges
 {
@@ -15,6 +17,12 @@ namespace CryptoAlerts.ConsoleApp.Influencers.Exchanges
         };
 
         public override int IntervalInSeconds { get; set; } = 20;
+
+        protected override bool ExtraConditions(string newContent)
+        {
+            return newContent.Contains("now live", StringComparison.InvariantCultureIgnoreCase) || 
+                   newContent.Contains("market", StringComparison.InvariantCultureIgnoreCase);
+        }
     }
 }
 
