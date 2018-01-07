@@ -30,3 +30,9 @@ Remember to withdraw a part of your winning at the end of the month. Dont want t
 
 Goal: find the strategy that can deliver the most profit. 
 I think Strategies 1, 3, 9  are the best.
+
+
+
+
+Strategy 10:
+Website like http://coinmarketcal.com where people can add buy signals and be thanked for it (by providing address)

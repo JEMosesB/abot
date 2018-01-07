@@ -113,6 +113,7 @@
     <Compile Include="Checkers\CrawlChecker.cs" />
     <Compile Include="Checkers\GenericChecker.cs" />
     <Compile Include="Checkers\IChecker.cs" />
+    <Compile Include="Influencers\Authorities\CryptoCalendar.cs" />
     <Compile Include="Influencers\Authorities\InItForTheMoney.cs" />
     <Compile Include="Influencers\Authorities\JohnMcAfee.cs" />
     <Compile Include="Core\CryptoAlerter.cs" />
@@ -126,6 +127,7 @@
     <Compile Include="Influencers\Authorities\CoinMarketCap.cs" />
     <Compile Include="Influencers\Exchanges\EtherDelta.cs" />
     <Compile Include="Influencers\Exchanges\Gate.io.cs" />
+    <Compile Include="Influencers\Exchanges\Kucoin.cs" />
     <Compile Include="Influencers\Exchanges\Tidex.cs" />
     <Compile Include="Influencers\IInfluencer.cs" />
     <Compile Include="Influencers\Exchanges\Poloniex.cs" />
@@ -157,6 +159,10 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Docs\Market Observations.txt" />
+    <Content Include="Docs\Next.txt" />
+    <Content Include="Docs\Strategies.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

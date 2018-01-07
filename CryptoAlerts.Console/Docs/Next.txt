@@ -1,5 +1,5 @@
 Priority 0:
-Prepare for NIO launch - only left to check Cryptopia one last time, and do a daily withdrawal.
+Prepare for NIO launch - wait until ETH reaches EtherDelta.
 Open limits on more exchanges - In progress need to check in a few days.
 Plan exchange movements for speed - 1st thing I need to do is gather all my money back in one place first. Hello Binance!
 
@@ -9,6 +9,7 @@ Remove Abot, move the project to private directory.
 Add AWS hosting.
 Write to a new file automatically.
 Add more alerts.
+Add full log of sent messages.
 
 Explore http://coinmarketcal.com/ for alerts.
 

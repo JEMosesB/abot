@@ -29,6 +29,8 @@ namespace CryptoAlerts.ConsoleApp
             cryptoAlerter.StartMonitoring(new InItForTheMoney());
             cryptoAlerter.StartMonitoring(new TwitterTest());
             cryptoAlerter.StartMonitoring(new CoinMarketCap());
+            cryptoAlerter.StartMonitoring(new CryptoCalendar());
+            cryptoAlerter.StartMonitoring(new Kucoin());
 
             Console.ReadLine();
         }
