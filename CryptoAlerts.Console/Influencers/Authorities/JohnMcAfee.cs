@@ -29,3 +29,10 @@ namespace CryptoAlerts.ConsoleApp.Influencers.Authorities
         }
     }
 }
+
+/*
+Analysis: Worth it for his coin of the week Pump and Dump, otherwise do not bother. 20% raise max.
+Atm Coin of the week is on 2pm Monday (Sunday?)
+
+Updates: Once a week atm.
+*/

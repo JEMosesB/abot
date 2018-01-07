@@ -25,7 +25,7 @@ namespace CryptoAlerts.ConsoleApp.Influencers.Authorities
 }
 
 /*
-Analysis: A VERY nice indicator, almast always the price rises by 50-80%. With about 80% chance.
+Analysis: A VERY nice indicator, almast always the price rises by 50-80% with about 80% chance, but very fast. 
 
 Updates: Few times a month.
 

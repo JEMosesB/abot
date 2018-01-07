@@ -7,8 +7,13 @@ Priority 1:
 Add descriptions in the SMS on average effect of the alerts (accross boards)
 Remove Abot, move the project to private directory.
 Add AWS hosting.
+Write to a new file automatically.
+Add more alerts.
+
+Explore http://coinmarketcal.com/ for alerts.
 
 Priority 2:
+
 Cancel Debit card
 Fill in accounting stuff
 
