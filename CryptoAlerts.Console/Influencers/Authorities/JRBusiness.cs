@@ -4,17 +4,17 @@ using CryptoAlerts.ConsoleApp.Checkers;
 
 namespace CryptoAlerts.ConsoleApp.Influencers.Authorities
 {
-    public class InItForTheMoney : BaseInfluencer
+    public class JRBusiness : BaseInfluencer
     {
         protected override IChecker Checker { get; set; } = new YoutubeChecker();
-        public override string Name { get; set; } = "In it for the Money";
-        public string PublicUrl { get; set; } = "https://www.youtube.com/channel/UCrn0rKrnYAme8fPa1HBWwbQ/videos";
-        public override string Url { get; set; } = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCrn0rKrnYAme8fPa1HBWwbQ&order=date&type=video&videoSyndicated=true&key=AIzaSyDTZk1ee5OQifm_zx9P7en9H2kwIuuYRaY";
+        public override string Name { get; set; } = "JR Business";
+        public string PublicUrl { get; set; } = "https://www.youtube.com/channel/UCmA06PHZc6O--2Yw4Vt4Wug/videos";
+        public override string Url { get; set; } = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCmA06PHZc6O--2Yw4Vt4Wug&order=date&type=video&videoSyndicated=true&key=AIzaSyDTZk1ee5OQifm_zx9P7en9H2kwIuuYRaY";
 
         public override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {
                 "json",
-                "RISE (RISE) | On the Rise?"
+                "I Bought 1,000,000 More Crypto Coins! The Next PAC Coins?!"
             }
         };
 
