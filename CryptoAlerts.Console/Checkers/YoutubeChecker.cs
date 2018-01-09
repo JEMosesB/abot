@@ -8,11 +8,14 @@ using System.Threading.Tasks;
 using CryptoAlerts.ConsoleApp.Core;
 using CryptoAlerts.ConsoleApp.Influencers;
 using Newtonsoft.Json.Linq;
+using NLog;
 
 namespace CryptoAlerts.ConsoleApp.Checkers
 {
     public class YoutubeChecker : IChecker
     {
+        private readonly ILogger _logger = LogManager.GetCurrentClassLogger();
+
         public async Task<Dictionary<string, string>> GetContent(IInfluencer influencer)
         {
             var result = new Dictionary<string, string>();
@@ -22,7 +25,7 @@ namespace CryptoAlerts.ConsoleApp.Checkers
                 Stopwatch timer = Stopwatch.StartNew();
                 dynamic responseJson = await GetJson(influencer);
                 timer.Stop();
-                Console.WriteLine($"[{DateTime.Now.ToString("HH:mm:ss")}] Success. Crawling Youtube page of [{influencer.Name}] has taken [{timer.Elapsed}] seconds");
+                _logger.Info($"Success. Crawling Youtube page of [{influencer.Name}] has taken [{timer.Elapsed}] seconds");
 
                 var titles = ((IEnumerable)responseJson.items).Cast<dynamic>()
                                 .Select(x => new
@@ -39,7 +42,7 @@ namespace CryptoAlerts.ConsoleApp.Checkers
             }
             catch (Exception e)
             {
-                Console.WriteLine($"[{DateTime.Now.ToString("HH:mm:ss")}] Failed. Crawling Youtube page of [{influencer.Name}] page has failed. Error:\n{e.Message}");
+                _logger.Info($"Failed. Crawling Youtube page of [{influencer.Name}] page has failed. Error:\n{e.Message}");
             }
 
             return result;

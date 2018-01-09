@@ -15,7 +15,7 @@ namespace CryptoAlerts.ConsoleApp.Influencers.Authorities
                 }
             };
 
-        public override int IntervalInSeconds { get; set; } = 10;
+        public override int IntervalInSeconds { get; set; } = 60;
 
         public override string GetSmsMessage(string newAnnouncement)
         {

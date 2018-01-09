@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 using CryptoAlerts.ConsoleApp.Core;
 using CryptoAlerts.ConsoleApp.Influencers;
 using CsQuery;
+using NLog;
 
 namespace CryptoAlerts.ConsoleApp.Checkers
 {
     public class GenericChecker : IChecker
     {
+        private readonly ILogger _logger = LogManager.GetCurrentClassLogger();
+
         public async Task<Dictionary<string, string>> GetContent(IInfluencer influencer)
         {
             var results = new Dictionary<string, string>();
@@ -20,7 +23,7 @@ namespace CryptoAlerts.ConsoleApp.Checkers
                 Stopwatch timer = Stopwatch.StartNew();
                 CQ html = await GetHtml(influencer);
                 timer.Stop();
-                Console.WriteLine($"[{DateTime.Now.ToString("HH:mm:ss")}] Success. Crawling [{influencer.Name}] page has taken [{timer.Elapsed}] seconds");
+                _logger.Info($"Success. Crawling [{influencer.Name}] page has taken [{timer.Elapsed}] seconds");
 
                 foreach (var check in influencer.Content)
                 {
@@ -31,7 +34,7 @@ namespace CryptoAlerts.ConsoleApp.Checkers
             }
             catch (Exception e)
             {
-                Console.WriteLine($"[{DateTime.Now.ToString("HH:mm:ss")}] Failed. Crawling [{influencer.Name}] page has failed. Url: {influencer.Url}\nError:\n{e.Message}");
+                _logger.Info($"Failed. Crawling [{influencer.Name}] page has failed. Url: {influencer.Url}\nError:\n{e.Message}");
             }
 
             return results;

@@ -9,11 +9,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using CryptoAlerts.ConsoleApp.Checkers;
 using CsQuery.ExtensionMethods;
+using NLog;
 
 namespace CryptoAlerts.ConsoleApp.Influencers
 {
     public abstract class BaseInfluencer : IInfluencer
     {
+        private readonly ILogger _logger = LogManager.GetCurrentClassLogger();
+
         protected virtual IChecker Checker { get; set; } = new GenericChecker();
         public virtual string Name { get; set; }
         public virtual string Description { get; set; }
@@ -29,7 +32,7 @@ namespace CryptoAlerts.ConsoleApp.Influencers
             foreach (var key in newContent.Keys.ToList())
             {
                 Content[key] = newContent[key];
-                Console.WriteLine($"  Initial value for [{Name}] alert is: [{Content[key]}]");
+                _logger.Info($"  Initial value for [{Name}] alert is: [{Content[key]}]");
             }
         }
 
@@ -48,7 +51,7 @@ namespace CryptoAlerts.ConsoleApp.Influencers
             }
             catch (Exception e)
             {
-                Console.WriteLine($"[{DateTime.Now.ToString("HH:mm:ss")}] Failed. Crawling [{Name}] page has failed. Url: {Url}\nError:\n{e.Message}");
+                _logger.Info($"Failed. Crawling [{Name}] page has failed. Url: {Url}\nError:\n{e.Message}");
             }
         }
 

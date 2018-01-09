@@ -1,4 +1,5 @@
 ﻿using System;
+using NLog;
 using Twilio.Rest.Api.V2010.Account;
 using Twilio.Types;
 
@@ -6,6 +7,8 @@ namespace CryptoAlerts.ConsoleApp.Core
 {
     public static class SmsSender
     {
+        private static readonly ILogger _smsLogger = LogManager.GetLogger("SentSMSLogger");
+
         public static void Send(string smsMessage)
         {
             MessageResource.Create(
@@ -13,7 +16,7 @@ namespace CryptoAlerts.ConsoleApp.Core
                 @from: new PhoneNumber("+441618507067"),
                 body: smsMessage);
 
-            Console.WriteLine($"Following SMS has just been sent:\n{smsMessage}"); 
+            _smsLogger.Info($"Following SMS has just been sent:\n{smsMessage}");
         }
     }
 }
