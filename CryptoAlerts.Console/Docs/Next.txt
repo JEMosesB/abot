@@ -1,12 +1,9 @@
 Priority 0:
+Analysis
 Remember! From now on only buy for short term!!!!!!!!!!!!!!! a couple hours - to 1 day max!!!!! Just until initial spike stops!!!!! Dont hold hoping it will go higher!!!!! Sell when you can!!!!
 You lost so much time and or money because you dont sell when you can!!! Moon, PRE, PACCoin, NIO, dfs!!!
-Prepare for NIO sell - wait 1 more day and sell Nio at 08. Dont believe it will go much higher. Actually dont believbe it will go anywhere at all. Need to 
-Open limits on more exchanges - In progress need to check in a few days.
-Plan exchange movements for speed - 1st thing I need to do is gather all my money back in one place first. Hello Binance!
-Write to a new file automatically.
-Add full log of sent messages.
 Move running process to AWS. Figure out deployment steps.
+Add DataHash alert. Sell off assets.
 
 Priority 1:
 Add descriptions in the SMS on average effect of the alerts (accross boards)

@@ -32,6 +32,7 @@ namespace CryptoAlerts.ConsoleApp
             // cryptoAlerter.StartMonitoring(new CryptoCalendar()); - Alerts too late! 
             cryptoAlerter.StartMonitoring(new Kucoin());
             cryptoAlerter.StartMonitoring(new JRBusiness());
+            cryptoAlerter.StartMonitoring(new DataHash());
 
             Console.ReadLine();
         }

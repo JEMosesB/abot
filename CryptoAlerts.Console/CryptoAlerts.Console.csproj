@@ -117,6 +117,7 @@
     <Compile Include="Checkers\GenericChecker.cs" />
     <Compile Include="Checkers\IChecker.cs" />
     <Compile Include="Influencers\Authorities\CryptoCalendar.cs" />
+    <Compile Include="Influencers\Authorities\DataHash.cs" />
     <Compile Include="Influencers\Authorities\InItForTheMoney.cs" />
     <Compile Include="Influencers\Authorities\JohnMcAfee.cs" />
     <Compile Include="Core\CryptoAlerter.cs" />
