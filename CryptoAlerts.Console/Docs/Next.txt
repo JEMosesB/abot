@@ -1,18 +1,20 @@
 Priority 0:
-Analysis
+Analyse past alerts
 Remember! From now on only buy for short term!!!!!!!!!!!!!!! a couple hours - to 1 day max!!!!! Just until initial spike stops!!!!! Dont hold hoping it will go higher!!!!! Sell when you can!!!!
 You lost so much time and or money because you dont sell when you can!!! Moon, PRE, PACCoin, NIO, dfs!!!
 Move running process to AWS. Figure out deployment steps.
-Add DataHash alert. Sell off assets.
+Sell off assets.
+
+Binance: Add new currency checker with API
+Add currency price comparer with Binance an dother Website
+Add deal crawler for Binance.
+
 
 Priority 1:
-Add descriptions in the SMS on average effect of the alerts (accross boards)
 Remove Abot, move the project to private directory.
 Add AWS hosting.
 Add more alerts.
 Steal Crypto Calendar alerts.
-Analyse past alerts
-
 
 Explore http://coinmarketcal.com/ for alerts.
 
@@ -20,7 +22,6 @@ Priority 2:
 
 Cancel Debit card
 Fill in accounting stuff
-
 Rename Influencers to Alerts
 
 Add analysis to the Message. 
