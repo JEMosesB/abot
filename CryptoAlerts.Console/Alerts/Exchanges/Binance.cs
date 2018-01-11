@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using CryptoAlerts.ConsoleApp.BaseModels;
 
-namespace CryptoAlerts.ConsoleApp.Influencers.Exchanges
+namespace CryptoAlerts.ConsoleApp.Alerts.Exchanges
 {
-    public class Binance : BaseInfluencer
+    public class Binance : HtmlAlert
     {
         public override string Name { get; set; } = "Binance";
 
@@ -10,7 +11,7 @@ namespace CryptoAlerts.ConsoleApp.Influencers.Exchanges
 
         public override string Url { get; set; } = "https://binance.zendesk.com/hc/en-us/categories/115000056351";
 
-        public override Dictionary<string, string> Content { get; set; } = 
+        protected override Dictionary<string, string> Content { get; set; } = 
             new Dictionary<string, string> { {
                 "li.article-list-item:first",
                 "Binance Lists Triggers (TRIG)"

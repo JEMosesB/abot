@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using CryptoAlerts.ConsoleApp.Checkers;
+using CryptoAlerts.ConsoleApp.BaseModels;
 
-namespace CryptoAlerts.ConsoleApp.Influencers.Authorities
+namespace CryptoAlerts.ConsoleApp.Alerts.Youtube
 {
-    public class JRBusiness : BaseInfluencer
+    public class JRBusiness : YoutubeAlert
     {
-        protected override IChecker Checker { get; set; } = new YoutubeChecker();
         public override string Name { get; set; } = "JR Business";
         public string PublicUrl { get; set; } = "https://www.youtube.com/channel/UCmA06PHZc6O--2Yw4Vt4Wug/videos";
         public override string Url { get; set; } = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCmA06PHZc6O--2Yw4Vt4Wug&order=date&type=video&videoSyndicated=true&key=AIzaSyDTZk1ee5OQifm_zx9P7en9H2kwIuuYRaY";
 
-        public override Dictionary<string, string> Content { get; set; } =
+        protected override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {
                 "json",
                 "I Bought 1,000,000 More Crypto Coins! The Next PAC Coins?!"
@@ -20,7 +19,7 @@ namespace CryptoAlerts.ConsoleApp.Influencers.Authorities
 
         public override int IntervalInSeconds { get; set; } = 20;
 
-        public override string GetSmsMessage(string newAnnouncement)
+        protected override string GetSmsMessage(string newAnnouncement)
         {
             return $"[{DateTime.Now.ToString("HH:mm:ss")}] \"{Name}\" has a new video!\n[{newAnnouncement}]\nHere is the link if you want to check it out: {PublicUrl}";
         }

@@ -1,17 +1,16 @@
 ﻿using System;
-using CryptoAlerts.ConsoleApp.Core;
-using CryptoAlerts.ConsoleApp.Extensions;
-using CsQuery;
 using System.Collections.Generic;
+using CryptoAlerts.ConsoleApp.BaseModels;
+using CryptoAlerts.ConsoleApp.Extensions;
 
-namespace CryptoAlerts.ConsoleApp.Influencers.Exchanges
+namespace CryptoAlerts.ConsoleApp.Alerts.Exchanges
 {
-    public class EtherDelta : BaseInfluencer
+    public class EtherDelta : HtmlAlert
     {
         public override string Name { get; set; } = "EtherDelta";
         public override string Url { get; set; } = "https://twitter.com/etherdelta";
 
-        public override Dictionary<string, string> Content { get; set; } =
+        protected override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {
                 "div#timeline ol li:first div.tweet div.content > div.js-tweet-text-container",
                 "New listings: DTR, WABI, RCT, YACHT, CRED, LGR, LNC, PXT, SHNZ, CMT, 1WO, WAND, BITC"

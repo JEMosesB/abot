@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
+using CryptoAlerts.ConsoleApp.BaseModels;
 
-namespace CryptoAlerts.ConsoleApp.Influencers.Exchanges
+namespace CryptoAlerts.ConsoleApp.Alerts.Exchanges
 {
-    public class Bitfinex : BaseInfluencer
+    public class Bitfinex : HtmlAlert
     {
         public override string Name { get; set; } = "Bitfinex";
         public override string Url { get; set; } = "https://www.bitfinex.com/posts";
 
-        public override Dictionary<string, string> Content { get; set; } =
+        protected override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {
                 "#posts-page div.change-log-section:first a:first",
                 "Golem (GNT) Trading Live"

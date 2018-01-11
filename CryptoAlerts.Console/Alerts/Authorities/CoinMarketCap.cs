@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using CryptoAlerts.ConsoleApp.BaseModels;
 
-namespace CryptoAlerts.ConsoleApp.Influencers.Authorities
+namespace CryptoAlerts.ConsoleApp.Alerts.Authorities
 {
-    public class CoinMarketCap : BaseInfluencer
+    public class CoinMarketCap : HtmlAlert
     {
         public override string Name { get; set; } = "CoinMarketCap";
         public override string Url { get; set; } = "https://coinmarketcap.com/new/";
 
-        public override Dictionary<string, string> Content { get; set; } =
+        protected override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {
                     "table#trending-recently-added tr:first-child td.currency-name a",
                     "Escroco"
@@ -17,7 +18,7 @@ namespace CryptoAlerts.ConsoleApp.Influencers.Authorities
 
         public override int IntervalInSeconds { get; set; } = 60;
 
-        public override string GetSmsMessage(string newAnnouncement)
+        protected override string GetSmsMessage(string newAnnouncement)
         {
             return $"[{DateTime.Now.ToString("HH:mm:ss")}] \"{Name}\" has a new listing: [{newAnnouncement}]\nHere is the link if you want to check it out: {Url}";
         }

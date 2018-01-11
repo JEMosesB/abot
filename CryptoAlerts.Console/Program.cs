@@ -1,7 +1,8 @@
 ﻿using System;
+using CryptoAlerts.ConsoleApp.Alerts.Authorities;
+using CryptoAlerts.ConsoleApp.Alerts.Exchanges;
+using CryptoAlerts.ConsoleApp.Alerts.Youtube;
 using CryptoAlerts.ConsoleApp.Core;
-using CryptoAlerts.ConsoleApp.Influencers.Authorities;
-using CryptoAlerts.ConsoleApp.Influencers.Exchanges;
 
 namespace CryptoAlerts.ConsoleApp
 {

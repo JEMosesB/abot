@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
+using CryptoAlerts.ConsoleApp.BaseModels;
 
-namespace CryptoAlerts.ConsoleApp.Influencers.Exchanges
+namespace CryptoAlerts.ConsoleApp.Alerts.Exchanges
 {
-    public class Gate : BaseInfluencer
+    public class Gate : HtmlAlert
     {
         public override string Name { get; set; } = "Gate.io";
         public override string Url { get; set; } = "https://twitter.com/gate_io";
 
-        public override Dictionary<string, string> Content { get; set; } =
+        protected override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {
                 "div#timeline ol li:first div.tweet div.content > div.js-tweet-text-container",
                 "Monero(XMR) deposit and withdraw will be enabled soon at https://gate.io/myaccount/deposit/XMR …. Trade XMR at  https://gate.io/trade/XMR_USDT  and https://gate.io/trade/XMR_BTC"

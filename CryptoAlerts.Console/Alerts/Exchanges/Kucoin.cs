@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
+using CryptoAlerts.ConsoleApp.BaseModels;
 
-namespace CryptoAlerts.ConsoleApp.Influencers.Exchanges
+namespace CryptoAlerts.ConsoleApp.Alerts.Exchanges
 {
-    public class Kucoin : BaseInfluencer
+    public class Kucoin : HtmlAlert
     {
         public override string Name { get; set; } = "Kucoin";
         public override string Url { get; set; } = "https://twitter.com/kucoincom";
 
-        public override Dictionary<string, string> Content { get; set; } =
+        protected override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {
                     "div#timeline ol li:nth-child(1) div.tweet div.content > div.js-tweet-text-container",
                     "Retweet this tweet to win 100,000 RPX！"

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using CryptoAlerts.ConsoleApp.Influencers;
+using CryptoAlerts.ConsoleApp.BaseModels;
 using Twilio;
 
 namespace CryptoAlerts.ConsoleApp.Core
@@ -14,21 +14,21 @@ namespace CryptoAlerts.ConsoleApp.Core
             TwilioClient.Init("AC7b07eea0532bc8889257e22df4185fcd", "8eaf16a3cf44a49976e07ad1b78321f7");
         }
 
-        public async Task StartMonitoring(IInfluencer influencer, CancellationToken token = default(CancellationToken))
+        public async Task StartMonitoring(IAlert alert, CancellationToken token = default(CancellationToken))
         {
-            await influencer.Init();
+            await alert.Init();
             while (!token.IsCancellationRequested)
             {
                 try
                 {
-                    await Task.Delay(TimeSpan.FromSeconds(influencer.IntervalInSeconds), token);
+                    await Task.Delay(TimeSpan.FromSeconds(alert.IntervalInSeconds), token);
                 }
                 catch (TaskCanceledException)
                 {
                     break;
                 }
 
-                await influencer.CheckWebsite();
+                await alert.CheckWebsite();
             }
         }
     }

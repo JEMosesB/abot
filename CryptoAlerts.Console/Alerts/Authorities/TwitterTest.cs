@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
+using CryptoAlerts.ConsoleApp.BaseModels;
 
-namespace CryptoAlerts.ConsoleApp.Influencers.Exchanges
+namespace CryptoAlerts.ConsoleApp.Alerts.Authorities
 {
-    public class TwitterTest : BaseInfluencer
+    public class TwitterTest : HtmlAlert
     {
         public override string Name { get; set; } = "Twitter Test";
         public override string Url { get; set; } = "https://twitter.com/Astral_100";
 
-        public override Dictionary<string, string> Content { get; set; } =
+        protected override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {
                     "div#timeline ol li:first div.tweet div.content > div.js-tweet-text-container",
                     "Twitter Test"

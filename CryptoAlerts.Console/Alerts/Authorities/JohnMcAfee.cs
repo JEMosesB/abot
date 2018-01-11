@@ -1,17 +1,16 @@
 ﻿using System;
-using CryptoAlerts.ConsoleApp.Core;
-using CryptoAlerts.ConsoleApp.Extensions;
-using CsQuery;
 using System.Collections.Generic;
+using CryptoAlerts.ConsoleApp.BaseModels;
+using CryptoAlerts.ConsoleApp.Extensions;
 
-namespace CryptoAlerts.ConsoleApp.Influencers.Authorities
+namespace CryptoAlerts.ConsoleApp.Alerts.Authorities
 {
-    public class JohnMcAfee : BaseInfluencer
+    public class JohnMcAfee : HtmlAlert
     {
         public override string Name { get; set; } = "John McAfee";
         public override string Url { get; set; } = "https://twitter.com/officialmcafee";
 
-        public override Dictionary<string, string> Content { get; set; } =
+        protected override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {
                 "div#timeline ol li:nth-child(1) div.tweet div.content > div.js-tweet-text-container",
                 "It has come to my attention that there are trolls on my page. I had not noticed, but it comes from highly trusted individuals.This is a serious page and this is not acceptable. All trolls will be blocked ... and also the faceless accounts with no followers  that they then create."

@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
+using CryptoAlerts.ConsoleApp.BaseModels;
 
-namespace CryptoAlerts.ConsoleApp.Influencers.Exchanges
+namespace CryptoAlerts.ConsoleApp.Alerts.Exchanges
 {
-    public class CoinExchange : BaseInfluencer
+    public class CoinExchange : HtmlAlert
     {
         public override string Name { get; set; } = "CoinExchange";
         public override string Url { get; set; } = "https://twitter.com/CoinExchangeio";
 
-        public override Dictionary<string, string> Content { get; set; } =
+        protected override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {
                     "div#latest-currencies table tr:nth-child(2) td:first",
                     "DragonChain"

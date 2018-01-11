@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using CryptoAlerts.ConsoleApp.BaseModels;
 using CryptoAlerts.ConsoleApp.Extensions;
 
-namespace CryptoAlerts.ConsoleApp.Influencers.Authorities
+namespace CryptoAlerts.ConsoleApp.Alerts.Authorities
 {
-    public class CryptoCalendar : BaseInfluencer
+    public class CryptoCalendar : HtmlAlert
     {
         public override string Name { get; set; } = "Crypto Calendar";
         public override string Url { get; set; } = "http://coinmarketcal.com/?form%5Bmonth%5D=&form%5Byear%5D=&form%5Bsort_by%5D=created_desc&form%5Bsubmit%5D=";
 
-        public override Dictionary<string, string> Content { get; set; } =
+        protected override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {
                     "div.content-box-general:first h5:nth-child(3)",
                     "Barterdex Core Finished"

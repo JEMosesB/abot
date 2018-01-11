@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
-using CryptoAlerts.ConsoleApp.Influencers;
+using CryptoAlerts.ConsoleApp.BaseModels;
 using Newtonsoft.Json.Linq;
 
-namespace CryptoAlerts.ConsoleApp.Checkers
+namespace CryptoAlerts.ConsoleApp.Core
 {
     public static class ContentGetter
     {
@@ -22,24 +19,24 @@ namespace CryptoAlerts.ConsoleApp.Checkers
             }
         }
 
-        public static async Task<string> GetHtml(IInfluencer influencer)
+        public static async Task<string> GetHtml(string url)
         {
             string htmlContent;
             using (MyWebClient client = new MyWebClient())
             {
                 client.Encoding = System.Text.Encoding.UTF8;
-                htmlContent = await client.DownloadStringTaskAsync(new Uri(influencer.Url));
+                htmlContent = await client.DownloadStringTaskAsync(new Uri(url));
             }
 
             return htmlContent;
         }
 
-        public static async Task<dynamic> GetJson(IInfluencer influencer)
+        public static async Task<dynamic> GetJson(string url)
         {
             dynamic responseJson;
             using (var httpClient = new HttpClient())
             {
-                var uriToCheck = new Uri(influencer.Url);
+                var uriToCheck = new Uri(url);
                 responseJson = JObject.Parse(await httpClient.GetStringAsync(uriToCheck));
             }
 
