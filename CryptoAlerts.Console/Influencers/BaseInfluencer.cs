@@ -22,7 +22,6 @@ namespace CryptoAlerts.ConsoleApp.Influencers
         public virtual string Description { get; set; }
         public virtual string Url { get; set; }
         public virtual Dictionary<string, string> Content { get; set; }
-        public virtual string CssString { get; set; }
         public virtual int IntervalInSeconds { get; set; }
 
         public virtual async Task Init()

@@ -9,8 +9,11 @@ namespace CryptoAlerts.ConsoleApp.Influencers.Exchanges
 
         public override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {
-                    "div#timeline ol li:first div.tweet div.content > div.js-tweet-text-container",
-                    "@canyacoin (CAN) token will join our list of tradable tokens...."
+                    "div#timeline ol li:nth-child(1) div.tweet div.content > div.js-tweet-text-container",
+                    "Retweet this tweet to win 100,000 RPX！"
+                }, {
+                    "div#timeline ol li:nth-child(2) div.tweet div.content > div.js-tweet-text-container",
+                    "AIgang will start trading at 22.00 UTC+8"
                 }
             };
 

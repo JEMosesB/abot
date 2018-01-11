@@ -21,7 +21,7 @@ namespace CryptoAlerts.ConsoleApp.Checkers
             try
             {
                 Stopwatch timer = Stopwatch.StartNew();
-                CQ html = await GetHtml(influencer);
+                CQ html = await ContentGetter.GetHtml(influencer);
                 timer.Stop();
                 _logger.Info($"Success. Crawling [{influencer.Name}] page has taken [{timer.Elapsed}] seconds");
 
@@ -38,28 +38,6 @@ namespace CryptoAlerts.ConsoleApp.Checkers
             }
 
             return results;
-        }
-
-        private async Task<string> GetHtml(IInfluencer influencer)
-        {
-            string htmlContent;
-            using (MyWebClient client = new MyWebClient())
-            {
-                client.Encoding = System.Text.Encoding.UTF8;
-                htmlContent = await client.DownloadStringTaskAsync(new Uri(influencer.Url));
-            }
-
-            return htmlContent;
-        }
-
-        private class MyWebClient : WebClient
-        {
-            protected override WebRequest GetWebRequest(Uri uri)
-            {
-                WebRequest w = base.GetWebRequest(uri);
-                w.Timeout = 15 * 1000;
-                return w;
-            }
         }
     }
 }

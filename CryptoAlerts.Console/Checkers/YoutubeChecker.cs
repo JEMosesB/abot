@@ -3,11 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Net.Http;
 using System.Threading.Tasks;
-using CryptoAlerts.ConsoleApp.Core;
 using CryptoAlerts.ConsoleApp.Influencers;
-using Newtonsoft.Json.Linq;
 using NLog;
 
 namespace CryptoAlerts.ConsoleApp.Checkers
@@ -23,7 +20,7 @@ namespace CryptoAlerts.ConsoleApp.Checkers
             try
             {
                 Stopwatch timer = Stopwatch.StartNew();
-                dynamic responseJson = await GetJson(influencer);
+                dynamic responseJson = await ContentGetter.GetJson(influencer);
                 timer.Stop();
                 _logger.Info($"Success. Crawling Youtube page of [{influencer.Name}] has taken [{timer.Elapsed}] seconds");
 
@@ -46,18 +43,6 @@ namespace CryptoAlerts.ConsoleApp.Checkers
             }
 
             return result;
-        }
-
-        private async Task<dynamic> GetJson(IInfluencer influencer)
-        {
-            dynamic responseJson;
-            using (var httpClient = new HttpClient())
-            {
-                var uriToCheck = new Uri(influencer.Url);
-                responseJson = JObject.Parse(await httpClient.GetStringAsync(uriToCheck));
-            }
-
-            return responseJson;
         }
     }
 }

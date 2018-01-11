@@ -113,7 +113,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Checkers\CrawlChecker.cs" />
+    <Compile Include="Checkers\ContentGetter.cs" />
     <Compile Include="Checkers\GenericChecker.cs" />
     <Compile Include="Checkers\IChecker.cs" />
     <Compile Include="Influencers\Authorities\CryptoCalendar.cs" />
