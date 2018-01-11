@@ -7,7 +7,7 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Exchanges
     {
         public override string Name { get; set; } = "Binance Twitter";
 
-        public override string Url { get; set; } = "https://twitter.com/binance_2017";
+        protected override string Url { get; set; } = "https://twitter.com/binance_2017";
 
         protected override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {

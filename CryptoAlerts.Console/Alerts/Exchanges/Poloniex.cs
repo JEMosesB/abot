@@ -6,7 +6,7 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Exchanges
     public class Poloniex : HtmlAlert
     {
         public override string Name { get; set; } = "Poloniex";
-        public override string Url { get; set; } = "https://poloniex.com/exchange#btc_storj";
+        protected override string Url { get; set; } = "https://poloniex.com/exchange#btc_storj";
 
         protected override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {

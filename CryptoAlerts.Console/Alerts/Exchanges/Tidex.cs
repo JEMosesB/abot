@@ -8,7 +8,7 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Exchanges
     public class Tidex : HtmlAlert
     {
         public override string Name { get; set; } = "Tidex";
-        public override string Url { get; set; } = "https://twitter.com/Tidex_Exchange";
+        protected override string Url { get; set; } = "https://twitter.com/Tidex_Exchange";
 
         protected override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {

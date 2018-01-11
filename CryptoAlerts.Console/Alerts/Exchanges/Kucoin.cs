@@ -6,7 +6,7 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Exchanges
     public class Kucoin : HtmlAlert
     {
         public override string Name { get; set; } = "Kucoin";
-        public override string Url { get; set; } = "https://twitter.com/kucoincom";
+        protected override string Url { get; set; } = "https://twitter.com/kucoincom";
 
         protected override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {

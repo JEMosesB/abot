@@ -7,7 +7,7 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Authorities
     public class CoinMarketCap : HtmlAlert
     {
         public override string Name { get; set; } = "CoinMarketCap";
-        public override string Url { get; set; } = "https://coinmarketcap.com/new/";
+        protected override string Url { get; set; } = "https://coinmarketcap.com/new/";
 
         protected override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {

@@ -8,7 +8,7 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Exchanges
     public class Cryptopia : HtmlAlert
     {
         public override string Name { get; set; } = "Cryptopia";
-        public override string Url { get; set; } = "https://twitter.com/Cryptopia_NZ";
+        protected override string Url { get; set; } = "https://twitter.com/Cryptopia_NZ";
 
         protected override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {

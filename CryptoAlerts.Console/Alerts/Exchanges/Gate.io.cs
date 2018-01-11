@@ -6,7 +6,7 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Exchanges
     public class Gate : HtmlAlert
     {
         public override string Name { get; set; } = "Gate.io";
-        public override string Url { get; set; } = "https://twitter.com/gate_io";
+        protected override string Url { get; set; } = "https://twitter.com/gate_io";
 
         protected override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {

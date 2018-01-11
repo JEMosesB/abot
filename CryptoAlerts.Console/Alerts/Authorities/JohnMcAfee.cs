@@ -8,7 +8,7 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Authorities
     public class JohnMcAfee : HtmlAlert
     {
         public override string Name { get; set; } = "John McAfee";
-        public override string Url { get; set; } = "https://twitter.com/officialmcafee";
+        protected override string Url { get; set; } = "https://twitter.com/officialmcafee";
 
         protected override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {

@@ -6,7 +6,7 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Authorities
     public class TwitterTest : HtmlAlert
     {
         public override string Name { get; set; } = "Twitter Test";
-        public override string Url { get; set; } = "https://twitter.com/Astral_100";
+        protected override string Url { get; set; } = "https://twitter.com/Astral_100";
 
         protected override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {

@@ -8,7 +8,7 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Exchanges
     public class EtherDelta : HtmlAlert
     {
         public override string Name { get; set; } = "EtherDelta";
-        public override string Url { get; set; } = "https://twitter.com/etherdelta";
+        protected override string Url { get; set; } = "https://twitter.com/etherdelta";
 
         protected override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {

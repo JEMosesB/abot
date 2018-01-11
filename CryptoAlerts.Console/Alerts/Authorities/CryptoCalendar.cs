@@ -8,7 +8,7 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Authorities
     public class CryptoCalendar : HtmlAlert
     {
         public override string Name { get; set; } = "Crypto Calendar";
-        public override string Url { get; set; } = "http://coinmarketcal.com/?form%5Bmonth%5D=&form%5Byear%5D=&form%5Bsort_by%5D=created_desc&form%5Bsubmit%5D=";
+        protected override string Url { get; set; } = "http://coinmarketcal.com/?form%5Bmonth%5D=&form%5Byear%5D=&form%5Bsort_by%5D=created_desc&form%5Bsubmit%5D=";
 
         protected override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {

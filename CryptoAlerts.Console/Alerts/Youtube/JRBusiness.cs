@@ -8,7 +8,7 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Youtube
     {
         public override string Name { get; set; } = "JR Business";
         public string PublicUrl { get; set; } = "https://www.youtube.com/channel/UCmA06PHZc6O--2Yw4Vt4Wug/videos";
-        public override string Url { get; set; } = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCmA06PHZc6O--2Yw4Vt4Wug&order=date&type=video&videoSyndicated=true&key=AIzaSyDTZk1ee5OQifm_zx9P7en9H2kwIuuYRaY";
+        protected override string Url { get; set; } = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCmA06PHZc6O--2Yw4Vt4Wug&order=date&type=video&videoSyndicated=true&key=AIzaSyDTZk1ee5OQifm_zx9P7en9H2kwIuuYRaY";
 
         protected override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {

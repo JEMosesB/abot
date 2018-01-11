@@ -9,7 +9,7 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Exchanges
 
         public override string Description { get; set; } = "Descr: Very safe investment, generally raises by 30-60% within a day with 80% chance";
 
-        public override string Url { get; set; } = "https://binance.zendesk.com/hc/en-us/categories/115000056351";
+        protected override string Url { get; set; } = "https://binance.zendesk.com/hc/en-us/categories/115000056351";
 
         protected override Dictionary<string, string> Content { get; set; } = 
             new Dictionary<string, string> { {

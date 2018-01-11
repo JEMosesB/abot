@@ -6,7 +6,7 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Exchanges
     public class Bitfinex : HtmlAlert
     {
         public override string Name { get; set; } = "Bitfinex";
-        public override string Url { get; set; } = "https://www.bitfinex.com/posts";
+        protected override string Url { get; set; } = "https://www.bitfinex.com/posts";
 
         protected override Dictionary<string, string> Content { get; set; } =
             new Dictionary<string, string> { {
