@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using CryptoAlerts.ConsoleApp.BaseModels;
 using CryptoAlerts.ConsoleApp.Extensions;
 
-namespace CryptoAlerts.ConsoleApp.Alerts.Authorities
+namespace CryptoAlerts.ConsoleApp.Alerts.HtmlPage
 {
     public class CryptoCalendar : HtmlAlert
     {
@@ -16,8 +16,6 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Authorities
                     "Barterdex Core Finished"
                 }
             };
-
-        public override int IntervalInSeconds { get; set; } = 60;
 
         protected override bool ExtraConditions(string newContent)
         {

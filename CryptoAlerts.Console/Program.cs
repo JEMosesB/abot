@@ -1,6 +1,6 @@
 ﻿using System;
-using CryptoAlerts.ConsoleApp.Alerts.Authorities;
-using CryptoAlerts.ConsoleApp.Alerts.Exchanges;
+using CryptoAlerts.ConsoleApp.Alerts.HtmlPage;
+using CryptoAlerts.ConsoleApp.Alerts.Twitter;
 using CryptoAlerts.ConsoleApp.Alerts.Youtube;
 using CryptoAlerts.ConsoleApp.Core;
 

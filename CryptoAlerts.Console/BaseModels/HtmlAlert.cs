@@ -9,6 +9,8 @@ namespace CryptoAlerts.ConsoleApp.BaseModels
 {
     public class HtmlAlert : BaseAlert
     {
+        public override int IntervalInSeconds { get; set; } = 60;
+
         protected override async Task<Dictionary<string, string>> GetContent()
         {
             var results = new Dictionary<string, string>();

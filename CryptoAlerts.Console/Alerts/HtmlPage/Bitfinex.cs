@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using CryptoAlerts.ConsoleApp.BaseModels;
 
-namespace CryptoAlerts.ConsoleApp.Alerts.Exchanges
+namespace CryptoAlerts.ConsoleApp.Alerts.HtmlPage
 {
     public class Bitfinex : HtmlAlert
     {
@@ -14,8 +14,6 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Exchanges
                 "Golem (GNT) Trading Live"
             }
         };
-
-        public override int IntervalInSeconds { get; set; } = 60;
     }
 }
 

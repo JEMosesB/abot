@@ -26,6 +26,8 @@ Monitor "Recently Added" tab on coinmarketcap.com, and invest for a good solid 1
 Strategy 10:
 Remember to withdraw a part of your winning at the end of the month. Dont want to have everything in cryptos.
 
+Strategy 11: 
+Market Cap analyser <- analyse currency prices on the different markets (using MarketCap)
 
 
 Goal: find the strategy that can deliver the most profit. 

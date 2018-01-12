@@ -4,11 +4,11 @@ Remember! From now on only buy for short term!!!!!!!!!!!!!!! a couple hours - to
 You lost so much time and or money because you dont sell when you can!!! Moon, PRE, PACCoin, NIO, dfs!!!
 Move running process to AWS. Figure out deployment steps.
 Sell off assets.
+CoinMarketCap rewrite alerts 
 
 Binance: Add new currency checker with API
 Add currency price comparer with Binance an dother Website
 Add deal crawler for Binance.
-
 
 Priority 1:
 Remove Abot, move the project to private directory.

@@ -3,21 +3,12 @@ using System.Collections.Generic;
 using CryptoAlerts.ConsoleApp.BaseModels;
 using CryptoAlerts.ConsoleApp.Extensions;
 
-namespace CryptoAlerts.ConsoleApp.Alerts.Exchanges
+namespace CryptoAlerts.ConsoleApp.Alerts.Twitter
 {
-    public class Cryptopia : HtmlAlert
+    public class Cryptopia : TwitterAlert
     {
         public override string Name { get; set; } = "Cryptopia";
         protected override string Url { get; set; } = "https://twitter.com/Cryptopia_NZ";
-
-        protected override Dictionary<string, string> Content { get; set; } =
-            new Dictionary<string, string> { {
-                "div#timeline ol li:first div.tweet div.content > div.js-tweet-text-container",
-                "OysterPearl(PRL) is now live on Cryptopia\nhttps://www.cryptopia.co.nz   \nExchange, Marketplace & Forums\n\nWelcome to the family :)"
-            }
-        };
-
-        public override int IntervalInSeconds { get; set; } = 20;
 
         protected override bool ExtraConditions(string newContent)
         {

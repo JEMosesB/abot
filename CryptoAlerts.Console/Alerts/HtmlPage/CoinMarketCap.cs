@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using CryptoAlerts.ConsoleApp.BaseModels;
 
-namespace CryptoAlerts.ConsoleApp.Alerts.Authorities
+namespace CryptoAlerts.ConsoleApp.Alerts.HtmlPage
 {
     public class CoinMarketCap : HtmlAlert
     {
@@ -15,8 +15,6 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Authorities
                     "Escroco"
                 }
             };
-
-        public override int IntervalInSeconds { get; set; } = 60;
 
         protected override string GetSmsMessage(string newAnnouncement)
         {

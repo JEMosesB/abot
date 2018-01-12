@@ -1,13 +1,11 @@
 ﻿using System.Collections.Generic;
 using CryptoAlerts.ConsoleApp.BaseModels;
 
-namespace CryptoAlerts.ConsoleApp.Alerts.Exchanges
+namespace CryptoAlerts.ConsoleApp.Alerts.HtmlPage
 {
     public class Binance : HtmlAlert
     {
         public override string Name { get; set; } = "Binance";
-
-        public override string Description { get; set; } = "Descr: Very safe investment, generally raises by 30-60% within a day with 80% chance";
 
         protected override string Url { get; set; } = "https://binance.zendesk.com/hc/en-us/categories/115000056351";
 
@@ -20,14 +18,12 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Exchanges
                 "The Fifth Session of “Community Coin per Month"
             }
         };
-
-        public override int IntervalInSeconds { get; set; } = 60;
     }
 }
 
 /*
 Analysis:
-Binance: (Descr: Very safe investment, generally raises by 30-60% within a day, with 80% chance)
+Binance: Descr: Very safe investment, generally raises by 30-60% within a day with 80% chance
  
 (Exp.Raise: 40% safe, 60% risky), (Probab, 80%)
 Description: Very safe investment, generally raises by 30-60% within a day.

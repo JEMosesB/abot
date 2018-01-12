@@ -3,21 +3,12 @@ using System.Collections.Generic;
 using CryptoAlerts.ConsoleApp.BaseModels;
 using CryptoAlerts.ConsoleApp.Extensions;
 
-namespace CryptoAlerts.ConsoleApp.Alerts.Exchanges
+namespace CryptoAlerts.ConsoleApp.Alerts.Twitter
 {
-    public class EtherDelta : HtmlAlert
+    public class EtherDelta : TwitterAlert
     {
         public override string Name { get; set; } = "EtherDelta";
         protected override string Url { get; set; } = "https://twitter.com/etherdelta";
-
-        protected override Dictionary<string, string> Content { get; set; } =
-            new Dictionary<string, string> { {
-                "div#timeline ol li:first div.tweet div.content > div.js-tweet-text-container",
-                "New listings: DTR, WABI, RCT, YACHT, CRED, LGR, LNC, PXT, SHNZ, CMT, 1WO, WAND, BITC"
-            }
-        };
-
-        public override int IntervalInSeconds { get; set; } = 20;
 
         protected override bool ExtraConditions(string newContent)
         {

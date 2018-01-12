@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using CryptoAlerts.ConsoleApp.BaseModels;
 
-namespace CryptoAlerts.ConsoleApp.Alerts.Exchanges
+namespace CryptoAlerts.ConsoleApp.Alerts.HtmlPage
 {
     public class Poloniex : HtmlAlert
     {
@@ -14,8 +14,6 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Exchanges
                 "Notice to Our Legacy Account Holders: https://poloniex.com/press-releases/2017.12.27-Notice-to-legacy-account-holders/"
             }
         };
-
-        public override int IntervalInSeconds { get; set; } = 60;
     }
 }
 

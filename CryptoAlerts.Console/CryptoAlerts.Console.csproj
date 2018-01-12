@@ -116,26 +116,27 @@
     <Compile Include="BaseModels\BaseAlert.cs" />
     <Compile Include="BaseModels\HtmlAlert.cs" />
     <Compile Include="BaseModels\IAlert.cs" />
+    <Compile Include="BaseModels\TwitterAlert.cs" />
     <Compile Include="BaseModels\YoutubeAlert.cs" />
     <Compile Include="Core\ContentGetter.cs" />
-    <Compile Include="Alerts\Authorities\CryptoCalendar.cs" />
+    <Compile Include="Alerts\HtmlPage\CryptoCalendar.cs" />
     <Compile Include="Alerts\Youtube\DataHash.cs" />
     <Compile Include="Alerts\Youtube\InItForTheMoney.cs" />
-    <Compile Include="Alerts\Authorities\JohnMcAfee.cs" />
+    <Compile Include="Alerts\Twitter\JohnMcAfee.cs" />
     <Compile Include="Core\CryptoAlerter.cs" />
     <Compile Include="Alerts\Youtube\JRBusiness.cs" />
-    <Compile Include="Alerts\Authorities\TwitterTest.cs" />
-    <Compile Include="Alerts\Exchanges\Binance.cs" />
-    <Compile Include="Alerts\Exchanges\Binance_Twitter.cs" />
-    <Compile Include="Alerts\Exchanges\Bitfinex.cs" />
-    <Compile Include="Alerts\Exchanges\CoinExchange.cs" />
-    <Compile Include="Alerts\Authorities\CoinMarketCap.cs" />
-    <Compile Include="Alerts\Exchanges\EtherDelta.cs" />
-    <Compile Include="Alerts\Exchanges\Gate.io.cs" />
-    <Compile Include="Alerts\Exchanges\Kucoin.cs" />
-    <Compile Include="Alerts\Exchanges\Tidex.cs" />
-    <Compile Include="Alerts\Exchanges\Poloniex.cs" />
-    <Compile Include="Alerts\Exchanges\Cryptopia.cs" />
+    <Compile Include="Alerts\Twitter\TwitterTest.cs" />
+    <Compile Include="Alerts\HtmlPage\Binance.cs" />
+    <Compile Include="Alerts\Twitter\Binance_Twitter.cs" />
+    <Compile Include="Alerts\HtmlPage\Bitfinex.cs" />
+    <Compile Include="Alerts\Twitter\CoinExchange.cs" />
+    <Compile Include="Alerts\HtmlPage\CoinMarketCap.cs" />
+    <Compile Include="Alerts\Twitter\EtherDelta.cs" />
+    <Compile Include="Alerts\Twitter\Gate.io.cs" />
+    <Compile Include="Alerts\Twitter\Kucoin.cs" />
+    <Compile Include="Alerts\Twitter\Tidex.cs" />
+    <Compile Include="Alerts\HtmlPage\Poloniex.cs" />
+    <Compile Include="Alerts\Twitter\Cryptopia.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -143,6 +144,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Content Include="Docs\Alert Analysis.txt" />
+    <Content Include="Docs\Manual Influencers.txt" />
+    <Content Include="Docs\Small currencies.txt" />
     <Content Include="nlog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
