@@ -33,7 +33,7 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Api
             }
             catch (Exception e)
             {
-                Logger.Info($"Failed.  Getting [{Name}] currencies has failed. Error:\n{e.Message}");
+                Logger.Info($"Failed. Getting [{Name}] currencies has failed. Error:\n{e.Message}");
             }
 
             return result;

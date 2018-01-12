@@ -9,10 +9,10 @@ using CryptoAlerts.ConsoleApp.Core;
 
 namespace CryptoAlerts.ConsoleApp.Alerts.Api
 {
-    public class CryptopiaApi : BaseApiAlert
+    public class KucoinApi : BaseApiAlert
     {
-        public override string Name { get; set; } = "CryptopiaApi";
-        protected override string Url { get; set; } = "https://www.cryptopia.co.nz/api/GetTradePairs";
+        public override string Name { get; set; } = "KucoinApi";
+        protected override string Url { get; set; } = "https://api.kucoin.com/v1/market/open/symbols";
 
         protected override async Task<List<TradePair>> GetContent()
         {
@@ -25,11 +25,11 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Api
                 timer.Stop();
                 Logger.Info($"Success. Getting [{Name}] currencies has taken [{timer.Elapsed}] seconds");
 
-                result = ((IEnumerable)responseJson.Data).Cast<dynamic>()
+                result = ((IEnumerable)responseJson.data).Cast<dynamic>()
                     .Select(x => new
                     {
-                        Name = (string)x.Label,
-                        IsActive = (string)x.Status == "OK"
+                        Name = (string)x.symbol,
+                        IsActive = (bool)x.trading
                     })
                     .Where(x => x.IsActive)
                     .Select(x => new TradePair

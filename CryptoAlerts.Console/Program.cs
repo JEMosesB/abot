@@ -40,7 +40,13 @@ namespace CryptoAlerts.ConsoleApp
 
             // ------------- APIs -------------------
             cryptoAlerter.StartMonitoring(new BinanceApi());
+            cryptoAlerter.StartMonitoring(new BitfinexApi());
+            cryptoAlerter.StartMonitoring(new CoinExchangeApi());
             cryptoAlerter.StartMonitoring(new CryptopiaApi());
+            cryptoAlerter.StartMonitoring(new GateApi());
+            cryptoAlerter.StartMonitoring(new KucoinApi());
+            cryptoAlerter.StartMonitoring(new PoloniexApi());
+            cryptoAlerter.StartMonitoring(new TidexApi());
 
             Console.ReadLine();
         }

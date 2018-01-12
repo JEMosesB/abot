@@ -113,7 +113,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alerts\Api\BitfinexApi.cs" />
+    <Compile Include="Alerts\Api\CoinExchangeApi.cs" />
     <Compile Include="Alerts\Api\CryptopiaApi.cs" />
+    <Compile Include="Alerts\Api\GateApi.cs" />
+    <Compile Include="Alerts\Api\KucoinApi.cs" />
+    <Compile Include="Alerts\Api\PoloniexApi.cs" />
+    <Compile Include="Alerts\Api\TidexApi.cs" />
     <Compile Include="BaseModels\BaseApiAlert.cs" />
     <Compile Include="BaseModels\BaseAlert.cs" />
     <Compile Include="Alerts\Api\BinanceApi.cs" />

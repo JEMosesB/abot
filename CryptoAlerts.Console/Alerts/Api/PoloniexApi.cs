@@ -6,13 +6,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using CryptoAlerts.ConsoleApp.BaseModels;
 using CryptoAlerts.ConsoleApp.Core;
+using Newtonsoft.Json.Linq;
 
 namespace CryptoAlerts.ConsoleApp.Alerts.Api
 {
-    public class CryptopiaApi : BaseApiAlert
+    public class PoloniexApi : BaseApiAlert
     {
-        public override string Name { get; set; } = "CryptopiaApi";
-        protected override string Url { get; set; } = "https://www.cryptopia.co.nz/api/GetTradePairs";
+        public override string Name { get; set; } = "PoloniexApi";
+        protected override string Url { get; set; } = "https://poloniex.com/public?command=returnTicker";
+        public override int IntervalInSeconds { get; set; } = 300; //the changes are so rare, no need to waste much resources on this
 
         protected override async Task<List<TradePair>> GetContent()
         {
@@ -25,16 +27,10 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Api
                 timer.Stop();
                 Logger.Info($"Success. Getting [{Name}] currencies has taken [{timer.Elapsed}] seconds");
 
-                result = ((IEnumerable)responseJson.Data).Cast<dynamic>()
-                    .Select(x => new
-                    {
-                        Name = (string)x.Label,
-                        IsActive = (string)x.Status == "OK"
-                    })
-                    .Where(x => x.IsActive)
+                result = ((IEnumerable)responseJson).Cast<dynamic>()
                     .Select(x => new TradePair
                     {
-                        Name = x.Name
+                        Name = ((JProperty)x).Name.ToUpper()
                     }).OrderBy(x => x.Name).ToList();
             }
             catch (Exception e)
