@@ -42,5 +42,18 @@ namespace CryptoAlerts.ConsoleApp.Core
 
             return responseJson;
         }
+
+        public static async Task<dynamic> GetJsonArray(string url)
+        {
+            dynamic responseJson;
+            using (var httpClient = new HttpClient())
+            {
+                var uriToCheck = new Uri(url);
+                responseJson = JArray.Parse(await httpClient.GetStringAsync(uriToCheck));
+            }
+
+            return responseJson;
+        }
+
     }
 }

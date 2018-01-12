@@ -15,7 +15,6 @@ namespace CryptoAlerts.ConsoleApp.BaseModels
         protected virtual string Url { get; set; }
 
         public virtual string Name { get; set; }
-        public virtual string Description { get; set; }
         public virtual int IntervalInSeconds { get; set; }
 
         protected abstract Task<Dictionary<string, string>> GetContent();

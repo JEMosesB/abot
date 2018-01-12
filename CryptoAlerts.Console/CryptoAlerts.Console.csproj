@@ -113,9 +113,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alerts\Api\CryptopiaApi.cs" />
+    <Compile Include="BaseModels\BaseApiAlert.cs" />
     <Compile Include="BaseModels\BaseAlert.cs" />
+    <Compile Include="Alerts\Api\BinanceApi.cs" />
     <Compile Include="BaseModels\HtmlAlert.cs" />
     <Compile Include="BaseModels\IAlert.cs" />
+    <Compile Include="BaseModels\TradePair.cs" />
     <Compile Include="BaseModels\TwitterAlert.cs" />
     <Compile Include="BaseModels\YoutubeAlert.cs" />
     <Compile Include="Core\ContentGetter.cs" />
@@ -130,7 +134,7 @@
     <Compile Include="Alerts\Twitter\Binance_Twitter.cs" />
     <Compile Include="Alerts\HtmlPage\Bitfinex.cs" />
     <Compile Include="Alerts\Twitter\CoinExchange.cs" />
-    <Compile Include="Alerts\HtmlPage\CoinMarketCap.cs" />
+    <Compile Include="Alerts\CoinMarketCap.cs" />
     <Compile Include="Alerts\Twitter\EtherDelta.cs" />
     <Compile Include="Alerts\Twitter\Gate.io.cs" />
     <Compile Include="Alerts\Twitter\Kucoin.cs" />

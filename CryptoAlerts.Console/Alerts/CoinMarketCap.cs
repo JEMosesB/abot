@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using CryptoAlerts.ConsoleApp.BaseModels;
 
-namespace CryptoAlerts.ConsoleApp.Alerts.HtmlPage
+namespace CryptoAlerts.ConsoleApp.Alerts
 {
     public class CoinMarketCap : HtmlAlert
     {

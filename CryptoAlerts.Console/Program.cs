@@ -1,7 +1,10 @@
 ﻿using System;
+using CryptoAlerts.ConsoleApp.Alerts;
+using CryptoAlerts.ConsoleApp.Alerts.Api;
 using CryptoAlerts.ConsoleApp.Alerts.HtmlPage;
 using CryptoAlerts.ConsoleApp.Alerts.Twitter;
 using CryptoAlerts.ConsoleApp.Alerts.Youtube;
+using CryptoAlerts.ConsoleApp.BaseModels;
 using CryptoAlerts.ConsoleApp.Core;
 
 namespace CryptoAlerts.ConsoleApp
@@ -34,6 +37,10 @@ namespace CryptoAlerts.ConsoleApp
             cryptoAlerter.StartMonitoring(new Kucoin());
             cryptoAlerter.StartMonitoring(new JRBusiness());
             cryptoAlerter.StartMonitoring(new DataHash());
+
+            // ------------- APIs -------------------
+            cryptoAlerter.StartMonitoring(new BinanceApi());
+            cryptoAlerter.StartMonitoring(new CryptopiaApi());
 
             Console.ReadLine();
         }
