@@ -40,6 +40,8 @@ namespace CryptoAlerts.ConsoleApp.Core
 
                     await CheckNextCoin(coin);
                 }
+
+                Console.WriteLine("\nSearching for deals on CoinMarketCap is completed!");
             //}
         }
 
@@ -54,6 +56,9 @@ namespace CryptoAlerts.ConsoleApp.Core
 
         private void FindSweetDeals(Coin coin)
         {
+            if (new[] { "BITCOIN", "DOGECOIN", "ETHEREUM", "", "", "" }.Contains(coin.Id.ToUpper()))
+                return;
+
             int percentsForSignal = 50;
 
             var goodMarkets = coin.Markets.Where(x => x.Volume24h > 500000).ToList();
