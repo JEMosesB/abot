@@ -9,7 +9,7 @@ namespace CryptoAlerts.ConsoleApp.BaseModels
 {
     public abstract class BaseAlert : IAlert
     {
-        protected readonly ILogger Logger = LogManager.GetCurrentClassLogger();
+        protected readonly ILogger Logger = LogManager.GetLogger("StandardLogging");
 
         protected virtual Dictionary<string, string> Content { get; set; }
         protected virtual string Url { get; set; }

@@ -115,6 +115,7 @@
   <ItemGroup>
     <Compile Include="Alerts\Api\BitfinexApi.cs" />
     <Compile Include="Alerts\Api\CoinExchangeApi.cs" />
+    <Compile Include="Alerts\Api\CoinMarketCapApi.cs" />
     <Compile Include="Alerts\Api\CryptopiaApi.cs" />
     <Compile Include="Alerts\Api\GateApi.cs" />
     <Compile Include="Alerts\Api\KucoinApi.cs" />
@@ -128,6 +129,7 @@
     <Compile Include="BaseModels\TradePair.cs" />
     <Compile Include="BaseModels\TwitterAlert.cs" />
     <Compile Include="BaseModels\YoutubeAlert.cs" />
+    <Compile Include="Core\CoinMarketCapExtractor.cs" />
     <Compile Include="Core\ContentGetter.cs" />
     <Compile Include="Alerts\HtmlPage\CryptoCalendar.cs" />
     <Compile Include="Alerts\Youtube\DataHash.cs" />

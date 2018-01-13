@@ -10,7 +10,7 @@ namespace CryptoAlerts.ConsoleApp.BaseModels
 {
     public abstract class BaseApiAlert : IAlert
     {
-        protected readonly ILogger Logger = LogManager.GetCurrentClassLogger();
+        protected readonly ILogger Logger = LogManager.GetLogger("StandardLogging");
 
         public virtual string Name { get; set; }
         public virtual int IntervalInSeconds { get; set; } = 20;

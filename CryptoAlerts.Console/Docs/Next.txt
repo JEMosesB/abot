@@ -5,10 +5,12 @@ You lost so much time and or money because you dont sell when you can!!! Moon, P
 
 Always analyse next investment in terms of speed of return! -> How much time will transfers take, how long will it take to cash out, is it a quick pump and dump or longer term hold investment? Are the markets and wallets all work correctly? Is there a withdrawal limit?
 
+CoinMarketCap rewrite alerts 
 Implement Startegy 11 <- coinmarketCap
 Move running process to AWS. Figure out deployment steps.
 Sell off assets.
-CoinMarketCap rewrite alerts 
+
+Add Currency Names to Api alerts
 
 Binance: 
 Add currency price comparer with Binance and other Website
