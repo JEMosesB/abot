@@ -3,6 +3,8 @@ Analyse past alerts
 Remember! From now on only buy for short term!!!!!!!!!!!!!!! a couple hours - to 1 day max!!!!! Just until initial spike stops!!!!! Dont hold hoping it will go higher!!!!! Sell when you can!!!!
 You lost so much time and or money because you dont sell when you can!!! Moon, PRE, PACCoin, NIO, dfs!!!
 
+Always analyse next investment in terms of speed of return! -> How much time will transfers take, how long will it take to cash out, is it a quick pump and dump or longer term hold investment? Are the markets and wallets all work correctly? Is there a withdrawal limit?
+
 Implement Startegy 11 <- coinmarketCap
 Move running process to AWS. Figure out deployment steps.
 Sell off assets.

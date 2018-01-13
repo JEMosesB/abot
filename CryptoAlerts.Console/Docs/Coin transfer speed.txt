@@ -1,0 +1,2 @@
+Btc usually takes about 1.5-3 hrs, sometimes up to 10hrs.
+Eth is depending on how you transfer, but unless transferred using eWallet usually is extremely slow, takes often a day for a single transfer network is always congested.
