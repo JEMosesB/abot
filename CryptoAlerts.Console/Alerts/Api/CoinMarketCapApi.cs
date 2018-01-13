@@ -14,6 +14,11 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Api
         public override string Name { get; set; } = "CoinMarketCapApi";
         protected override string Url { get; set; } = "https://api.coinmarketcap.com/v1/ticker/?limit=0";
 
+        protected override string GetSmsMessage(string newAnnouncement)
+        {
+            return $"[{DateTime.Now.ToString("HH:mm:ss")}] \"{Name}\" has listed a new currency [{newAnnouncement}]\nLink: {Url}";
+        }
+
         protected override async Task<List<TradePair>> GetContent()
         {
             var result = new List<TradePair>();

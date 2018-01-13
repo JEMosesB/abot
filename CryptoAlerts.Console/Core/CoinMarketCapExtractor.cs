@@ -16,9 +16,10 @@ namespace CryptoAlerts.ConsoleApp.Core
     public class CoinMarketCapExtractor
     {
         protected static readonly ILogger CmcLogger = LogManager.GetLogger("CoinMarketCapLogger");
+        protected static readonly ILogger CmcDealsLogger = LogManager.GetLogger("CoinMarketCapDealFinder");
 
         private string _allCoinsUrl = "https://api.coinmarketcap.com/v1/ticker/?limit=0";
-        private int IntervalInMilliseconds { get; set; } = 1000;
+        private int IntervalInMilliseconds { get; set; } = 500;
         private List<Coin> Coins { get; set; }
 
 
@@ -29,8 +30,8 @@ namespace CryptoAlerts.ConsoleApp.Core
 
         public async Task StartMonitoring()
         {
-            while (true)
-            {
+            //while (true)
+            //{
                 await UpdateCoinsList();
 
                 foreach (var coin in Coins)
@@ -39,26 +40,44 @@ namespace CryptoAlerts.ConsoleApp.Core
 
                     await CheckNextCoin(coin);
                 }
-            }
+            //}
         }
 
         private async Task CheckNextCoin(Coin coin)
         {
             coin.Markets = await GetMarketsForCoin(coin);
 
-            //string deals = FindSweetDeals(coin);
+            FindSweetDeals(coin);
 
             //Console.WriteLine(deals);
         }
 
-        private string FindSweetDeals(Coin coin)
+        private void FindSweetDeals(Coin coin)
         {
-            throw new NotImplementedException();
+            int percentsForSignal = 50;
+
+            var goodMarkets = coin.Markets.Where(x => x.Volume24h > 500000).ToList();
+            if (goodMarkets.Count > 1)
+            {
+                var minPriceMarket = goodMarkets.OrderBy(x => x.Price).First();
+                var maxPriceMarket = goodMarkets.OrderByDescending(x => x.Price).First();
+
+                if (((minPriceMarket.Price + ((minPriceMarket.Price / 100) * percentsForSignal)) < maxPriceMarket.Price) && (minPriceMarket.Price > 0))
+                {
+                    var diffPercents = Math.Round((maxPriceMarket.Price - minPriceMarket.Price) * 100 / minPriceMarket.Price, 2);
+                    CmcDealsLogger.Info($"Deal found!\n" +
+                                        $"Coin [{coin.Id.ToUpper()}] ({coin.Name})\n" +
+                                        $"on [{minPriceMarket.Name}] market ({minPriceMarket.Pair} pair): min price is ${minPriceMarket.Price}\n" +
+                                        $"on [{maxPriceMarket.Name}] market ({maxPriceMarket.Pair} pair): max price is ${maxPriceMarket.Price}\n" +
+                                        $"which is a {diffPercents}% difference\n" +
+                                        $"Link: {coin.MarketUrl}");
+                }
+            }
         }
 
         private async Task<List<Market>> GetMarketsForCoin(Coin coin)
         {
-            var url = $"https://coinmarketcap.com/currencies/{coin.Id}/#markets";
+            //var url = $"https://coinmarketcap.com/currencies/{coin.Id}/#markets";
             //var url = $"https://coinmarketcap.com/currencies/quantstamp/#markets";
 
             var results = new List<Market>();
@@ -66,12 +85,12 @@ namespace CryptoAlerts.ConsoleApp.Core
             try
             {
                 Stopwatch timer = Stopwatch.StartNew();
-                var b = await ContentGetter.GetHtml(url);
+                var b = await ContentGetter.GetHtml(coin.MarketUrl);
                 CQ html = b;
                 timer.Stop();
                 CmcLogger.Info($"Success. Crawling [{coin.Id}] page has taken [{timer.Elapsed}] seconds");
 
-                var marketsTable = html[$"div#markets table#markets-table tbody tr"].ToList();
+                var marketsTable = html["div#markets table#markets-table tbody tr"].ToList();
 
                 foreach (var row in marketsTable)
                 {
@@ -80,9 +99,9 @@ namespace CryptoAlerts.ConsoleApp.Core
                     {
                         Name = tdList[1].Cq().Find("a").Text().Trim(),
                         Pair = tdList[2].Cq().Find("a").Text().Trim(),
-                        Volume24h = Convert.ToDecimal(tdList[3].Cq().Find("span").Text().Trim().Replace("$", "").Replace(",", "")),
-                        Price = Convert.ToDecimal(tdList[4].Cq().Find("span").Text().Trim().Replace("$", "").Replace(",", "")),
-                        VolumePercent = Convert.ToDecimal(tdList[5].InnerText.Trim().Replace("%", "")),
+                        Volume24h = Convert.ToDecimal(tdList[3].Cq().Find("span").Text().Replace("$", "").Replace(",", "").Replace("*", "").Trim()),
+                        Price = Convert.ToDecimal(tdList[4].Cq().Find("span").Text().Replace("$", "").Replace(",", "").Replace("*", "").Trim()),
+                        VolumePercent = Convert.ToDecimal(tdList[5].InnerText.Replace("%", "").Replace("*", "").Trim()),
                         Updated = tdList[6].InnerText.Trim()
                     };
                     results.Add(marketRow);
@@ -92,7 +111,7 @@ namespace CryptoAlerts.ConsoleApp.Core
             }
             catch (Exception e)
             {
-                CmcLogger.Info($"Failed. Crawling [{coin.Id}] page has failed. Url: {url}\nError:\n{e.Message}");
+                CmcLogger.Info($"Failed. Crawling [{coin.Id}] page has failed. Url: {coin.MarketUrl}\nError:\n{e.Message}");
             }
 
             return results;
@@ -121,9 +140,11 @@ namespace CryptoAlerts.ConsoleApp.Core
                         Name = (string)x.name,
                         Symbol = (string)x.symbol,
                         Rank = (int)x.rank,
-                        LastUpdated = (string)x.last_updated == null ? (DateTime?)null : new DateTime((long)x.last_updated)
+                        LastUpdated = (string)x.last_updated == null ? (DateTime?)null : new DateTime((long)x.last_updated),
+                        // MarketUrl = $"https://coinmarketcap.com/currencies/{(string)x.id}/#markets"
+                        MarketUrl = $"https://coinmarketcap.com/currencies/{(string)x.id}/#markets"
                     })
-                    //.OrderBy(x => x.Name)
+                    .OrderBy(x => x.Name)
                     .ToList();
             }
             catch (Exception e)
@@ -143,6 +164,7 @@ namespace CryptoAlerts.ConsoleApp.Core
         public int Rank { get; set; }
         public DateTime? LastUpdated { get; set; }
         public List<Market> Markets { get; set; }
+        public string MarketUrl { get; set; }
     }
 
     public class Market
