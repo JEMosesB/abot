@@ -1,2 +1,13 @@
 BitHTC - Large exchange, announcements are worthless - best to stay away though as many people have bad experiences and it has terrible reviews. Could be due to the size though. Although I got error even trying to register. Seems useless.
 Okex - medium large exchange (174), however its announcements are useless, not worth to register as its chinese.
+
+
+CoinMarketCapApi signal:
+OKEx - when only Okex, always goes down.
+HitBtc - always goes up.
+Tidex - TRASH!!!!
+Kucoin - SelfKEy, started on Kucoin, then on CMC, went up after a fall.
+Kucoin - Ins - didnt go up
+Bottos was on 3 markets already (Gate, Bibox, BigONE) - small up, then down
+
+Binance - didnt do such a big increase

@@ -13,6 +13,6 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Twitter
 /*
 Analysis:
  !!! Unreliable alert !!!
-
+Daily Volume: $31,568,827
     None...
 */

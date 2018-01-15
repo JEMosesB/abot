@@ -20,6 +20,7 @@ namespace CryptoAlerts.ConsoleApp.Alerts.HtmlPage
 /*
 Analysis:
 Poloniex: No idea. Very rare updates so no past history.
+Daily Volume: $546,038,401
 
 Reaction Time: a few minutes
 Updates: Extremely rare updates.

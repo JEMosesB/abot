@@ -13,6 +13,7 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Twitter
 /*
 Analysis: Kukoin only works if there are no larger exchanges in play already. 
 Usually I would say its safe to assume 50% increase if you get in early.
+Daily Volume: $181,684,696
 
 CAN - ?
 POE - No change

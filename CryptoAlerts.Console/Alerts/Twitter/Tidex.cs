@@ -18,7 +18,10 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Twitter
 }
 
 /*
+
 Analysis: Ads new markets quite rarely, the result is usually an increase by 50-100% within a day. The volume is low though.
+Tidex has set me up because the transfer process took too long and the volumes are very low, it doesnt increase prices as I hoped.
+Daily Volume: $33,534,319
 
 Updates: Few times a month.
 

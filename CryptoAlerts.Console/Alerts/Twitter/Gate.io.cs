@@ -16,6 +16,7 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Twitter
 Analysis:
 Gate.io: Very volatile. Wait up to a day (1.5 max) and take what you can. Avg. increase is ether v. small or 80-100%
 Update: Unless its a new token, price increase is almost guaranteed in 1 day - 2 max.
+Daily Volume: $119,169,097
 
 Reaction Time: a few minutes
 Updates: Few times a month.

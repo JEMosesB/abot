@@ -24,7 +24,8 @@ namespace CryptoAlerts.ConsoleApp.Alerts.HtmlPage
 /*
 Analysis:
 Binance: Descr: Very safe investment, generally raises by 30-60% within a day with 80% chance
- 
+Daily Volume: $4,183,253,633
+
 (Exp.Raise: 40% safe, 60% risky), (Probab, 80%)
 Description: Very safe investment, generally raises by 30-60% within a day.
 Expected Raise: 40% safe, 60% risky

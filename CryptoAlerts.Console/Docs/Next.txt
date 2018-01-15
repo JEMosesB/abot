@@ -1,9 +1,9 @@
 Analise buy signal more thoroughly (CoinMarketCap!!!)
 
-ltc transfer (hitBtc->Gate) -> 20.50 - 22.00
+Add AWS hosting.
+
 Priority 0:
-Keep an eye on SWC - Coinexchange
-Keep an eye on BCD - Gate.io
+Gate tio
 Keep an eye on NIO - CMC
 
 Analyse past alerts
@@ -13,9 +13,7 @@ You lost so much time and or money because you dont sell when you can!!! Moon, P
 Always analyse next investment in terms of speed of return! -> How much time will transfers take, how long will it take to cash out, is it a quick pump and dump or longer term hold investment? Are the markets and wallets all work correctly? Is there a withdrawal limit?
 
 CoinMarketCap rewrite alerts 
-Implement Startegy 11 <- coinmarketCap
 Move running process to AWS. Figure out deployment steps.
-Sell off assets.
 
 Add Currency Names to Api alerts
 
@@ -25,7 +23,6 @@ Add deal crawler for Binance.
 
 Priority 1:
 Remove Abot, move the project to private directory.
-Add AWS hosting.
 Add more alerts.
 Steal Crypto Calendar alerts.
 
@@ -46,3 +43,6 @@ Add alert for Coinfloor, Coin Base and proper one for CoinExchange - I need to f
 
 
 Eth arrival time to Cryptopia (with max gas): 1.5 hrs
+
+
+We only raise an error when Restaurant Partner sets a new AutoRenew, if he wants to increase it he can, provided he is within the limits of the current auction

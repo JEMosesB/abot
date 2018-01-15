@@ -21,6 +21,7 @@ namespace CryptoAlerts.ConsoleApp.Alerts.Twitter
 /*
 Analysis:
 Cryptopia: (Descr: Very lucrative investments, usualy prices rise by quite a lot (50-70%) and usually keep increasing, but need to react fast.)
+Daily Volume: $105,485,223
 
 Reaction Time: a few minutes
 Updates: Once a week at most, but updates many coins at a time.

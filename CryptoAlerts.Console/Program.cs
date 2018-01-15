@@ -26,7 +26,7 @@ namespace CryptoAlerts.ConsoleApp
             //cryptoAlerter.StartMonitoring(new Cryptopia());
             //cryptoAlerter.StartMonitoring(new Gate());
             //cryptoAlerter.StartMonitoring(new EtherDelta());
-            //cryptoAlerter.StartMonitoring(new Tidex());
+            //// cryptoAlerter.StartMonitoring(new Tidex()); <- Bad alert, doesnt cause increases anymore. Lost money on it.
             //// cryptoAlerter.StartMonitoring(new CoinExchange()); - Unreliable alert
 
             //// -------------Authorities------------

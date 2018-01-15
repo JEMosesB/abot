@@ -20,7 +20,8 @@ namespace CryptoAlerts.ConsoleApp.Alerts.HtmlPage
 /*
 Analysis:
 Bitfinex: (Descr: Pretty safe investment, although increase is not that large, generally around 20-25% within a day, with 80% chance)
- 
+Daily Volume: $1,673,494,448
+
 (Exp.Raise: 20% safe, 30% risky), (Probab, 80%)
 Reaction Time: a few minutes
 
