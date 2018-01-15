@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using CryptoAlerts.ConsoleApp.BaseModels;
 using CsQuery;
+using Fiddler;
 using NLog;
 
 namespace CryptoAlerts.ConsoleApp.Core
@@ -21,7 +22,7 @@ namespace CryptoAlerts.ConsoleApp.Core
         private string _allCoinsUrl = "https://api.coinmarketcap.com/v1/ticker/?limit=0";
         private int IntervalInMilliseconds { get; set; } = 500;
         private List<Coin> Coins { get; set; }
-
+        private int MarketCounter { get; set; }
 
         public CoinMarketCapExtractor()
         {
@@ -32,8 +33,9 @@ namespace CryptoAlerts.ConsoleApp.Core
         {
             //while (true)
             //{
-                await UpdateCoinsList();
+                Console.WriteLine("\nStarting to search for deals on CoinMarketCap!");
 
+                await UpdateCoinsList();
                 foreach (var coin in Coins)
                 {
                     await Task.Delay(TimeSpan.FromMilliseconds(IntervalInMilliseconds));
@@ -56,7 +58,7 @@ namespace CryptoAlerts.ConsoleApp.Core
 
         private void FindSweetDeals(Coin coin)
         {
-            if (new[] { "BITCOIN", "DOGECOIN", "ETHEREUM", "", "", "" }.Contains(coin.Id.ToUpper()))
+            if (new[] { "BITCOIN", "DOGECOIN", "ETHEREUM", "TETHER" }.Contains(coin.Id.ToUpper()))
                 return;
 
             int percentsForSignal = 50;
@@ -82,9 +84,6 @@ namespace CryptoAlerts.ConsoleApp.Core
 
         private async Task<List<Market>> GetMarketsForCoin(Coin coin)
         {
-            //var url = $"https://coinmarketcap.com/currencies/{coin.Id}/#markets";
-            //var url = $"https://coinmarketcap.com/currencies/quantstamp/#markets";
-
             var results = new List<Market>();
 
             try
@@ -93,17 +92,23 @@ namespace CryptoAlerts.ConsoleApp.Core
                 var b = await ContentGetter.GetHtml(coin.MarketUrl);
                 CQ html = b;
                 timer.Stop();
-                CmcLogger.Info($"Success. Crawling [{coin.Id}] page has taken [{timer.Elapsed}] seconds");
+                MarketCounter++;
+                CmcLogger.Info($"Success. Crawling [{coin.Id}] page has taken [{timer.Elapsed}] seconds. No. {MarketCounter}");
 
                 var marketsTable = html["div#markets table#markets-table tbody tr"].ToList();
 
                 foreach (var row in marketsTable)
                 {
                     var tdList = row.Cq().Find("td").ToList();
+                    var pair = tdList[2].Cq().Find("a").Text().Trim();
+
+                    if (pair.Split('/').Contains("KRW"))
+                        continue;
+
                     var marketRow = new Market()
                     {
                         Name = tdList[1].Cq().Find("a").Text().Trim(),
-                        Pair = tdList[2].Cq().Find("a").Text().Trim(),
+                        Pair = pair,
                         Volume24h = Convert.ToDecimal(tdList[3].Cq().Find("span").Text().Replace("$", "").Replace(",", "").Replace("*", "").Trim()),
                         Price = Convert.ToDecimal(tdList[4].Cq().Find("span").Text().Replace("$", "").Replace(",", "").Replace("*", "").Trim()),
                         VolumePercent = Convert.ToDecimal(tdList[5].InnerText.Replace("%", "").Replace("*", "").Trim()),
@@ -124,6 +129,7 @@ namespace CryptoAlerts.ConsoleApp.Core
 
         private async Task UpdateCoinsList()
         {
+            MarketCounter = 0;
             Coins = await GetLatestCoins(_allCoinsUrl);
         }
 

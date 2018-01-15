@@ -1,3 +1,6 @@
+Analise buy signal more thoroughly (CoinMarketCap!!!)
+
+ltc transfer (hitBtc->Gate) -> 20.50 - 22.00
 Priority 0:
 Keep an eye on SWC - Coinexchange
 Keep an eye on BCD - Gate.io
